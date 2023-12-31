@@ -9,22 +9,46 @@
     <link rel="stylesheet" href="./external.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--
+    Per buton bottom right
+    -->
+    <style>
+    
+        #scrollToTop {
+            background-color: yellow;
+            border: 2px solid yellow;
+            color: yellow;
+            transition: background-color 0.3s, color 0.3s;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        #scrollToTop:hover {
+            background-color: white;
+            color: yellow;
+        }
+    </style>
+
 </head>
 
 <body>
 <header>
-    <div class="container-fluid pb-0" style="background-color: black;"> <!-- Add pb-0 to remove bottom padding -->
+    <div class="container-fluid pb-0" style="background-color: black;"> 
         <div class="row justify-content-center align-items-center vh-100">
-            <!-- Add vh-100 class to make the row take full viewport height -->
-            <nav class="navbar navbar-expand-lg align-items-center ml-5" style="width: 90%;"> <!-- Use ml-5 and custom width -->
+            
+            <nav class="navbar navbar-expand-lg align-items-center ml-5" style="width: 90%;"> 
                 <div class="container">
 
-                    <!-- Replace "your-logo.png" with the path to your logo image -->
+                    
                     <a class="navbar-brand" href="#">
                         <img src="../image.png" alt="Home" class="logo" width="200">
                     </a>
 
-                    <!-- Navbar links -->
+                    
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ml-auto d-flex">
                             <li class="nav-item flex-fill">
@@ -53,16 +77,164 @@
         </div>
     </div>
 </header>
-    
-    
-<br><br><br><br><br><br><br><br><br><br>    
+       
+<div class="image-container">
+    <img src="../dealership.jpg" alt="Dealership Photo" style="width: 100%;">
+    <div class="overlay-text">
+        <p><strong>Buy your dream car!</strong></p>
+        <p><italic>The latest and best cars in the automobile market</italic></p>
+    </div>
+</div>
 
-    <!-- Bootstrap JS (optional, but may be needed for some features) -->
+<div style="text-align: center; padding-top: 50px;">
+    <h3><strong>A preview of our luxurious stock!</strong></h3>
+    <p><i>For a shortcut to the stock page, press the images of the cars</i></p>
+</div>
+<div class="container mt-5 custom-container">
+    <div class="row">
+    
+        <div class="col-lg-6 mb-4 d-flex align-items-stretch">
+            <div class="card">
+                <a href="./CARS.html">
+                    <img src="../Porsche_918_Spyder.jpg" class="card-img-top" alt="Car Image 1">
+                </a>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Porsche 918 Spyder</h5>
+                    <p class="card-text">Hybrid hypercar: Porsche 918 Spyder, speed meets sustainability.</p>
+                    <p class="card-text">The Porsche 918 Spyder is a pinnacle of automotive engineering, seamlessly blending electrification with high-performance prowess. This hypercar boasts a hybrid powertrain, combining a potent V8 engine with electric motors, generating a staggering 887 horsepower. Accelerating from 0 to 60 mph in a mere 2.5 seconds, it achieves a top speed of 214 mph. Beyond raw speed, the 918 Spyder prioritizes efficiency, offering an electric-only range for eco-conscious driving. Its cutting-edge design incorporates lightweight materials, aerodynamic features, and a sleek silhouette, enhancing both performance and aesthetics on this.</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-lg-6 mb-4 d-flex align-items-stretch">
+            <div class="row">
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="./CARS.html">
+                            <img src="../Lamborghini-Huracan-STO.jpg" height="150px;" class="card-img-top " alt="Car Image 2">
+                        </a>
+                        <div class="card-body text-center flex-grow-1">
+                            <h5 class="card-title">Lamborghini Huracan STO</h5>
+                            <p class="card-text">Track-focused, aerodynamic it excels in performance prowess.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="./CARS.html">
+                            <img src="../mercedes-amg-g63.jpg" height="150px;" class="card-img-top" alt="Car Image 3">
+                        </a>
+                        <div class="card-body text-center flex-grow-1">
+                            <h5 class="card-title">Mercedes AMG G63 Black Series</h5>
+                            <p class="card-text">Luxurious off-road prowess, the Mercedes AMG G63 thrills enthusiasts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="./CARS.html">
+                            <img src="../Senna.jpg" height="150px;" class="card-img-top" alt="Car Image 4">
+                        </a>
+                        <div class="card-body text-center flex-grow-1">
+                            <h5 class="card-title">McLaren Senna</h5>
+                            <p class="card-text">McLaren Senna: Hypercar excellence, combining speed, agility, and aerodynamics... An absolute dream!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 d-flex flex-column">
+                        <a href="./CARS.html">
+                            <img src="../Rolls-Royce-Spectre.jpg" height="150px;" class="card-img-top" alt="Car Image 5">
+                        </a>
+                        <div class="card-body text-center flex-grow-1">
+                            <h5 class="card-title">Rolls-Royce Spectre</h5>
+                            <p class="card-text">Debuting Q4 2023, Rolls-Royce Spectre: Electrical pinnacle meets Rolls-Royce level luxury...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+<hr class="hr-footer">
+<h2 class="text-center mb-4">Why Choose Us?</h2>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <img src="../chat.png" class="card-img-top mx-auto" alt="Image 1" style="width: 20%;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Quality Reviews</h5>
+                    <p class="card-text">Around 95% of our reviews online are very pozitive!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <img src="../handshake.png" class="card-img-top mx-auto" alt="Image 2" style="width: 20%;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Trusted Dealership</h5>
+                    <p class="card-text">All our customers leave with a negotiation process and deal that satisfies them!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <img src="../electric-car.png" class="card-img-top mx-auto" alt="Image 3" style="width: 20%;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Excellcent Cars</h5>
+                    <p class="card-text">Our company offers cars from all the best global brands, at a premium price!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="hr-footer">
+
+<div class="container1">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Stay updated with the latest news and offers.</p>
+    <form action="#" method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <input type="submit" value="Subscribe">
+    </form>
+</div>
+
+<!--
+    Per buton bottom right
+-->
+<a id="scrollToTop" href="#" onclick="scrollToTop()">Scroll To Top</a>
+
+<script>
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <footer class="background-black">
+    <div class="row">
+        <hr>
+     </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-6">
@@ -88,7 +260,7 @@
                 <h1>Contact us</h1>
                 <ul style="list-style-type: square;">
                     <li><a href="tel:+38344123465">Call Us: +383 (0) 44 123-456</a></li>
-                    <li><a href="mailto:projekti@web.com">Email us: projekti@web.com</a></li>
+                    <li><a href="mailto:projekti@web.com">Email Us: projekti@web.com</a></li>
                     <li><a href="https://www.google.com/maps/place/Fakulteti+Teknik/@42.6487697,21.1667975,19z/data=!4m6!3m5!1s0x13549ec1b6ecb2c1:0x7f0893730efce187!8m2!3d42.6487907!4d21.1671507!16s%2Fm%2F0j63ycv?entry=ttu" target="_blank"><address>Bregu i Diellit p.n 10000, Pristina, Kosova</address></a></li>
                 </ul>   
             </div>
@@ -96,19 +268,27 @@
         
         <hr class="hr-footer">
         
-        <div class="row">
-            <div class="col-6">
-                &copy; Horizon Autos
-            </div>
-            <div class="col-6">
-                Follow us:
-            </div>
-        </div>
-
-        <div class="row">
-            <hr>
-        </div>
+        <div class="row align-items-center">
+    <div class="col-6">
+        &copy; Horizon Autos
     </div>
+    <div class="col-6">
+        Follow us:
+        <a href="https://example.com/facebook" target="_blank" class="overwrite">
+            <img src="../facebook.png" alt="Facebook Icon" width="80" height="80" style="margin-right: 10px;">
+        </a>
+        <a href="https://example.com/instagram" target="_blank" class="overwrite">
+            <img src="../insta1.png" alt="Instagram Icon" width="75" height="75">
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <hr>
+ </div>
+
+    
+
 </footer>
 </body>
 
