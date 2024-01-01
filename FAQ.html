@@ -32,7 +32,6 @@
             color: yellow;
         }
 </style>
-<audio id="successSound" src="./pictures/Ding - Sound Effect (HD).mp3"></audio>
 </head>
 <header>
     <div class="container-fluid pb-0" style="background-color: black;"> 
@@ -151,7 +150,7 @@
 
             <div id="faqCollapse4" class="collapse" aria-labelledby="faqHeading4" data-parent="#faqAccordion">
                 <div class="card-body border-top border-warning">
-                    Answer 4: Yes, you can schedule a test drive on our website by visiting the TEST DRIVE page.
+                    Answer 4: Yes, you can schedule a test drive on our website by visiting the CONTACT page.
                 </div>
             </div>
         </div>
@@ -169,7 +168,7 @@
 
             <div id="faqCollapse5" class="collapse" aria-labelledby="faqHeading5" data-parent="#faqAccordion">
                 <div class="card-body border-top border-warning">
-                    Answer 5: Yes, we offer financing options. Visit the FINANCE page for more information.
+                    Answer 5: Yes, we offer financing options. Visit the CONTACT page for more information.
                 </div>
             </div>
         </div>
@@ -180,14 +179,14 @@
                 <h5 class="mb-0">
                     <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
                         data-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
-                        Question 6: What warranty options do you provide?
+                        Question 6: When are you open?
                     </button>
                 </h5>
             </div>
 
             <div id="faqCollapse6" class="collapse" aria-labelledby="faqHeading6" data-parent="#faqAccordion">
                 <div class="card-body border-top border-warning">
-                    Answer 6: We offer various warranty options. Details can be found on the WARRANTY page.
+                    Answer 6: To view our working hours check the table on the WORKERS .
                 </div>
             </div>
         </div>
@@ -209,7 +208,7 @@
                     onmouseover="changeColors(this, 'yellow', 'white')"
                     onmouseout="changeColors(this, 'white', 'yellow')"
                     onmousedown="changeColors(this, 'yellow', 'white')"
-                    onmouseup="playSuccessSound(); changeColors(this, 'white', 'yellow')">Submit</button>
+                    onmouseup="changeColors(this, 'white', 'yellow')">Submit</button>
             </form>
         </div>
     </div>
@@ -294,9 +293,15 @@
             element.style.backgroundColor = bgColor;
             element.style.color = textColor;
         }
-    function playSuccessSound() {
-        var audio = document.getElementById('successSound');
-        audio.play();
+        
+    function playAudio() {
+        // Replace 'audio.mp3' with the path to your audio file
+        var audio = new Audio('./pictures/whoosh.mp3');
+        
+        // Check if the audio can be played (some browsers require user interaction)
+        if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {
+            audio.play();
+        }
     }
 </script>
 
