@@ -216,12 +216,22 @@
 <!--
     Per buton bottom right
 -->
-<a id="scrollToTop" href="#" onclick="scrollToTop()">Scroll To Top</a>
+<a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()">Scroll To Top</a>
 
 <script>
-    function scrollToTop() {
+    function scrollToTopAndPlayAudio() {
+        playAudio();
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
+    }
+    function playAudio() {
+        
+        var audio = new Audio('./pictures/whoosh.mp3');
+        
+        
+        if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {
+            audio.play();
+        }
     }
 </script>
 

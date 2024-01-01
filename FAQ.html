@@ -208,7 +208,8 @@
                     onmouseover="changeColors(this, 'yellow', 'white')"
                     onmouseout="changeColors(this, 'white', 'yellow')"
                     onmousedown="changeColors(this, 'yellow', 'white')"
-                    onmouseup="changeColors(this, 'white', 'yellow')">Submit</button>
+                    onmouseup="changeColors(this, 'white', 'yellow')"
+                    onclick="playAudio1()">Submit</button>
             </form>
         </div>
     </div>
@@ -219,7 +220,8 @@
 </div>
 
 
-<a id="scrollToTop" href="#" onclick="scrollToTop()">Scroll To Top</a>
+<a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()">Scroll To Top</a>
+
 
 
 
@@ -285,7 +287,11 @@
 </footer>
 
 <script>
-    function scrollToTop() {
+    function scrollToTopAndPlayAudio() {
+        // Call the playAudio function
+        playAudio();
+
+        // Scroll to the top
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
@@ -295,10 +301,19 @@
         }
         
     function playAudio() {
-        // Replace 'audio.mp3' with the path to your audio file
+        
         var audio = new Audio('./pictures/whoosh.mp3');
         
-        // Check if the audio can be played (some browsers require user interaction)
+        
+        if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {
+            audio.play();
+        }
+    }
+    function playAudio1() {
+        
+        var audio = new Audio('./pictures/Ding - Sound Effect (HD).mp3');
+        
+        
         if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {
             audio.play();
         }
