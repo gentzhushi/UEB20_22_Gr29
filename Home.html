@@ -9,15 +9,12 @@
     <link rel="stylesheet" href="./external.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!--
-    Per buton bottom right
-    -->
-    <style>
-    
+    <!--Per buton bottom right-->
+    <style>    
         #scrollToTop {
-            background-color: yellow;
-            border: 2px solid yellow;
-            color: yellow;
+            background-color: orange;
+            border: 2px solid orange;
+            color: orange;
             transition: background-color 0.3s, color 0.3s;
             position: fixed;
             bottom: 20px;
@@ -25,11 +22,10 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-        }
-    
+        }    
         #scrollToTop:hover {
             background-color: white;
-            color: yellow;
+            color: orange;
         }
     </style>
 
@@ -158,10 +154,8 @@
     </div>
 </div>
 
+<hr class="hr-body">
 
-    
-
-<hr class="hr-footer">
 <h2 class="text-center mb-4">Why Choose Us?</h2>
 <div class="container mt-5">
     <div class="row">
@@ -197,7 +191,7 @@
     </div>
 </div>
 
-<hr class="hr-footer">
+<hr class="hr-body">
 
 <div class="container1">
     <h2>Subscribe to Our Newsletter</h2>
@@ -209,33 +203,10 @@
     </form>
 </div>
 
-<!--
-    Per buton bottom right
--->
+<!--Per buton bottom right-->
 <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()">Scroll To Top</a>
 
-<script>
-    function scrollToTopAndPlayAudio() {
-        playAudio();
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-    function playAudio() {
-        
-        var audio = new Audio('./pictures/whoosh.mp3');
-        
-        
-        if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {
-            audio.play();
-        }
-    }
-</script>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <footer class="background-black">
     <div class="row">
@@ -296,6 +267,20 @@
     
 
 </footer>
+    <script>
+        function scrollToTopAndPlayAudio() {
+            playAudio();
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        function playAudio() {        
+            var audio = new Audio('./pictures/whoosh.mp3');
+            if (audio.canPlayType && audio.canPlayType('audio/mpeg')) { audio.play(); }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
