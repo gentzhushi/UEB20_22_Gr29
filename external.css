@@ -16,6 +16,8 @@ hr.hr-footer {
     border-radius: 5px;
 }
 
+
+
 hr.hr-body {
     margin: 5%;
     border: 0.1px solid rgb(212, 212, 212);
@@ -133,4 +135,64 @@ input[type="submit"]:hover{
 .custom-btn:hover {
     background-color: yellow;
     color: white;
+}
+
+/*----------------------------------------------------------------------*/
+fieldset {
+    border: 2px solid orange;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+}
+
+legend {
+    font-size: 1.5em;
+    color: orange;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+}
+/*---------------------------------------------------------------------*/
+#scrollToTop {
+    background-color: orange;
+    border: 2px solid orange;
+    color: orange;
+    transition: background-color 0.3s, color 0.3s;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}    
+#scrollToTop:hover {
+    background-color: white;
+    color: orange;
 }

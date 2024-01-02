@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./external.css">
     <!-- Add your stylesheets, scripts, or other head elements here -->
+    <style>
+        #scrollToTop {
+    background-color: orange;
+    border: 2px solid orange;
+    color: orange;
+    transition: background-color 0.3s, color 0.3s;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}    
+#scrollToTop:hover {
+    background-color: white;
+    color: orange;
+}
+    </style>
 </head>
 
 <body>
@@ -48,7 +66,12 @@
         </div>
     </header>
     <main>
-        <div class="container mt-5 custom-container">
+        <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()">Scroll To Top</a>
+        <hr style="color: white; margin: 5%;">
+        <div class="container mt-5">
+
+            <h1 class="mb-4">Featured</h1>
+
             <div class="row">
             
                 <div class="col-lg-6 mb-4 d-flex align-items-stretch">
@@ -57,7 +80,7 @@
                             <img src="./pictures/Porsche_918_Spyder.jpg" class="card-img-top" alt="Car Image 1">
                         </a>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Porsche 918 Spyder</h5>
+                            <h5 class="card-title" style="background-color: rgba(10, 10, 10, 0.2)">Porsche 918 Spyder</h5>
                             <p class="card-text">Hybrid hypercar: Porsche 918 Spyder, speed meets sustainability.</p>
                             <p class="card-text">The Porsche 918 Spyder is a plug-in hybrid sports car by the German automaker Porsche. It’s powered by a 4.6 L V8 engine and two electric motors, delivering a combined output of 887 horsepower and 944 lb-ft of torque. This power allows the 918 Spyder to accelerate from 0 to 60 mph in just 2.4 seconds. <br><br> The 918 Spyder is a testament to Porsche’s commitment to innovation and performance. It combines traditional and electric power in a way that sets new standards in the realm of sports cars. With its impressive specs and groundbreaking design, the 918 Spyder is more than just a car - it’s a symbol of Porsche’s innovative spirit and a benchmark for future hybrid sports cars. <br><br>Indeed, the 918 Spyder’s blend of power and innovation truly sets it apart in the world of high-performance vehicles</p>
                         </div>
@@ -74,7 +97,7 @@
                                     <img src="./pictures/Lamborghini-Huracan-STO.jpg" height="150px;" class="card-img-top " alt="Car Image 2">
                                 </a>
                                 <div class="card-body text-center flex-grow-1">
-                                    <h5 class="card-title">Lamborghini Huracan STO</h5>
+                                    <h5 class="card-title" style="background-color: rgba(10, 10, 10, 0.2)">Lamborghini Huracan STO</h5>
                                     <p class="card-text">The Lamborghini Huracan STO is a super-sports car equipped with a powerful engine that delivers 640 horsepower and 565 Nm of torque. It can go from 0 to 62 mph in just 3.0 seconds.</p>
                                 </div>
                             </div>
@@ -86,7 +109,7 @@
                                     <img src="./pictures/mercedes-amg-g63.jpg" height="150px;" class="card-img-top" alt="Car Image 3">
                                 </a>
                                 <div class="card-body text-center flex-grow-1">
-                                    <h5 class="card-title">Mercedes-AMG GT63s Black Series</h5>
+                                    <h5 class="card-title" style="background-color: rgba(10, 10, 10, 0.2)">Mercedes-AMG GT63s Black Series</h5>
                                     <p class="card-text">The Mercedes-AMG GT63s is a luxurious four-door coupe with a powerful V8 engine, delivering 630 horsepower and accelerating from 0 to 60 mph in 3.1 seconds.</p>
                                 </div>
                             </div>
@@ -98,7 +121,7 @@
                                     <img src="./pictures/Senna.jpg" height="150px;" class="card-img-top" alt="Car Image 4">
                                 </a>
                                 <div class="card-body text-center flex-grow-1">
-                                    <h5 class="card-title">McLaren Senna</h5>
+                                    <h5 class="card-title" style="background-color: rgba(10, 10, 10, 0.2)">McLaren Senna</h5>
                                     <p class="card-text">The McLaren Senna is a high-performance coupe with a V8, 4.0L engine that delivers 789 horsepower. It can accelerate from 0 to 62 mph in just 2.8 seconds.
         
                                     </p>
@@ -112,7 +135,7 @@
                                     <img src="./pictures/Rolls-Royce-Spectre.jpg" height="150px;" class="card-img-top" alt="Car Image 5">
                                 </a>
                                 <div class="card-body text-center flex-grow-1">
-                                    <h5 class="card-title">Rolls-Royce Spectre</h5>
+                                    <h5 class="card-title" style="background-color: rgba(10, 10, 10, 0.2)">Rolls-Royce Spectre</h5>
                                     <p class="card-text">Debuting Q4 2023, The Rolls Royce Spectre is Rolls-Royce’s first all-electric vehicle. This car can accelerate from 0 to 62 miles per hour in 4.5 seconds</p>
                                 </div>
                             </div>
@@ -126,7 +149,7 @@
         
         <div class="container mt-4">
 
-            <h1 class="mb-4">Car Grid</h1>
+            <h1 class="mb-4">Stock</h1>
     
             <div class="row">
     
@@ -286,7 +309,32 @@
     
         </div>
         <hr class="hr-body">
-       
+        <div class="container mt-5">
+        <h2 class="mb-4">Try Out Our Exclusive 0% Leasing Offers</h2>
+        <p> At Horizon Autos, we are thrilled to introduce our exclusive 0% leasing offers, designed to make your dream car more affordable than ever. Take advantage of this unprecedented opportunity to drive home your favorite luxury vehicle with no interest on your leasing plan. <br>
+            Our commitment to providing exceptional value means you can enjoy the thrill of driving a high-performance car without the additional cost of interest. Whether you're interested in a sleek sports car, a luxurious sedan, or a powerful SUV, our 0% leasing options put you in the driver's seat with unparalleled savings. <br>            
+            Experience the freedom of driving a top-tier vehicle with budget-friendly monthly payments. Explore our extensive stock and discover the perfect car for you. Don't miss out on this limited-time opportunity to elevate your driving experience at 0% interest. <br></p>
+        </div>
+        <fieldset style="margin-top: 5%;">
+            <legend>Leasing Calculator</legend>
+
+            <label for="carPrice">Car Price: $</label>
+            <input type="number" id="carPrice" required>
+            <br>
+          
+            <label for="months">Number of Months: </label>
+            <select id="months" required>
+                <option value="12">12 months</option>
+                <option value="24">24 months</option>
+                <option value="36">36 months</option>
+                <option value="48">48 months</option>
+            </select>
+            <br>
+          
+            <button onclick="calculateLeasing()" style="border-radius: 5px;">Calculate</button>
+          
+            <div id="result"></div>
+        </fieldset>
     </main>
 
 
@@ -349,6 +397,44 @@
         
     
     </footer>
+    <script>
+        function calculateLeasing() {
+            // Get input values
+            const carPrice = parseFloat(document.getElementById("carPrice").value);
+            const months = parseInt(document.getElementById("months").value);
+      
+            // Validate inputs
+            if (isNaN(carPrice) || isNaN(months) || carPrice <= 0 || months <= 0) {
+                alert("Please enter valid numbers for Car Price and Number of Months.");
+                return;
+            }
+      
+            // Calculate downpayment (20% of the car price)
+            const downpayment = 0.2 * carPrice;
+      
+            // Calculate monthly payment (rest of the price evenly distributed among the months)
+            const monthlyPayment = (carPrice - downpayment) / months;
+      
+            // Display the result
+            const resultElement = document.getElementById("result");
+            resultElement.innerHTML = `
+                <h3>Leasing Summary</h3>
+                <p>Downpayment: $${downpayment.toFixed(2)}</p>
+                <p>Monthly Payment: $${monthlyPayment.toFixed(2)}</p>
+            `;
+        }
+    </script>
+    <script>
+        function scrollToTopAndPlayAudio() {
+            playAudio();
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        function playAudio() {        
+            var audio = new Audio('./pictures/whoosh.mp3');
+            if (audio.canPlayType && audio.canPlayType('audio/mpeg')) { audio.play(); }
+        }
+    </script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
