@@ -32,16 +32,16 @@
         }
 
         .benefit-icon {
-            width: 50px; /* Adjust the size as needed */
+            width: 50px; 
             height: 50px;
-            margin-bottom: 10px; /* Add margin to the bottom */
-            padding: 5px; /* Add padding to the icon */
+            margin-bottom: 10px; 
+            padding: 5px; 
         }
 
         .benefit-card {
-            border: none; /* Remove the default card border */
-            border-radius: 15px; /* Add rounded corners for a modern look */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+            border: none; 
+            border-radius: 15px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .benefit-card img {
@@ -55,6 +55,42 @@
         .benefit-card .card-body {
             padding: 20px;
         }
+
+        .benefit-card:hover {
+            transform: translateY(-5px) scale(1.05); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .car-logo {
+            height: 210px; 
+            width: 210px;
+            object-fit: contain;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease, transform 0.3s ease; 
+        }
+
+        .car-logo::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.1); 
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .car-logo:hover {
+            box-shadow: 0 3px rgba(0, 0, 0, 0.08); 
+            transform: scale(1.1); 
+        }
+
+        .car-logo:hover::before {
+            transform: scaleX(1); 
+        }
+
     </style>
 </head>
 
@@ -136,18 +172,21 @@
     </div>
 
     <div class="container mt-5">
-        <!-- Added Made-up History -->
         <h2 class="text-center mb-4">Our Story</h2>
-        <p>Founded in 1995, Horizon Autos started as a humble venture with a passion for automobiles and a commitment to delivering unparalleled driving experiences. Over the years, we have evolved into a premier destination for luxury cars, earning the trust and loyalty of our esteemed customers.</p>
-        <p>Our journey is marked by a relentless pursuit of excellence, curating a collection that reflects the epitome of automotive craftsmanship. Each car in our inventory is meticulously selected, embodying the perfect blend of design, innovation, and performance.</p>
-        <p>At Horizon Autos, we believe in more than selling cars; we believe in creating memories. Our team is dedicated to ensuring that every customer finds their dream car, making each purchase a milestone in their automotive journey.</p>
+        <div class="story-section">
+            <p>Founded in 1995, Horizon Autos started as a humble venture with a passion for futuristic automobiles and a commitment to delivering unparalleled driving experiences. Our founders, visionary engineers with a love for innovation, set out to redefine the automotive industry.</p>
+            <p>Over the years, we have evolved into a premier destination for cutting-edge luxury cars, earning the trust and loyalty of our esteemed customers. Our state-of-the-art showroom showcases the latest models equipped with advanced technology, creating a seamless blend of performance and elegance.</p>
+            <p>Our journey is marked by a relentless pursuit of excellence, curating a collection that pushes the boundaries of automotive craftsmanship. Each car in our inventory is not just a vehicle; it's a masterpiece, embodying the perfect blend of futuristic design, technological innovation, and eco-friendly performance.</p>
+            <p>At Horizon Autos, we believe in more than selling cars; we believe in creating memories. Our team of automotive enthusiasts is dedicated to ensuring that every customer embarks on a journey with their dream car, making each purchase a milestone in their futuristic automotive experience.</p>
+            <p>Step into the future of driving with Horizon Autos, where innovation meets luxury, and every road becomes an adventure.</p>
+        </div>
     </div>
-
+    
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Benefits of Working with Us</h2>
+        <h2 class="text-center mb-4" style="margin-bottom: 30px;">Benefits of Working with Us</h2>
         <div class="row">
             <div class="col-lg-4 mb-4">
-                <div class="card">
+                <div class="card benefit-card benefit-car">
                     <img src="./pictures/benefit1-icon.png" class="card-img-top mx-auto" alt="Benefit 1 Icon" style="width: 20%; margin-top: 20px;">
                     <div class="card-body text-center">
                         <h5 class="card-title">Exclusive Access</h5>
@@ -157,7 +196,7 @@
             </div>
     
             <div class="col-lg-4 mb-4">
-                <div class="card">
+                <div class="card benefit-card">
                     <img src="./pictures/benefit2-icon.png" class="card-img-top mx-auto" alt="Benefit 2 Icon" style="width: 20%;  margin-top: 20px;">
                     <div class="card-body text-center">
                         <h5 class="card-title">Personalized Service</h5>
@@ -167,7 +206,7 @@
             </div>
     
             <div class="col-lg-4 mb-4">
-                <div class="card">
+                <div class="card benefit-card">
                     <img src="./pictures/benefit3-icon.png" class="card-img-top mx-auto" alt="Benefit 3 Icon" style="width: 20%;  margin-top: 20px;">
                     <div class="card-body text-center">
                         <h5 class="card-title">Lifetime Warranty</h5>
@@ -176,9 +215,38 @@
                 </div>
             </div>
         </div>
+    </div>    
+
+    <div class="container mt-5" style="margin-bottom: 30px;">
+        <h2 class="text-center mb-4" style="margin-bottom: 30px;">Car Brands We Sell</h2>
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <img src="./pictures/car-logo1.png" alt="Car Logo 1" class="img-fluid rounded shadow car-logo" style="max-width: 100%;">
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="./pictures/car-logo2.png" alt="Car Logo 2" class="img-fluid rounded shadow car-logo" style="max-width: 100%;">
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="./pictures/car-logo3.png" alt="Car Logo 3" class="img-fluid rounded shadow car-logo" style="max-width: 100%;">
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="./pictures/car-logo4.png" alt="Car Logo 3" class="img-fluid rounded shadow car-logo" style="max-width: 100%;">
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="./pictures/car-logo5.png" alt="Car Logo 3" class="img-fluid rounded shadow car-logo" style="max-width: 100%;">
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="./pictures/car-logo6.png" alt="Car Logo 3" class="img-fluid rounded shadow car-logo" style="max-width: 100%;">
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="./pictures/car-logo7.png" alt="Car Logo 3" class="img-fluid rounded shadow car-logo" style="max-width: 100%;">
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="./pictures/car-logo8.png" alt="Car Logo 3" class="img-fluid rounded shadow car-logo" style="max-width: 100%;">
+            </div>
+        </div>
     </div>
     
-    <hr class="hr-footer">
 
     <footer class="background-black">
         <div class="row">
@@ -240,6 +308,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
