@@ -196,3 +196,52 @@ button {
     background-color: white;
     color: orange;
 }
+/*---------------------------------------------------------------------*/
+.container1-test_drive {
+    max-width: 600px; /* Increased max-width for better visibility */
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden; /* Clearing the float */
+}
+
+.header-test_drive {
+    color: #333;
+}
+
+.form-test_drive {
+    margin-top: 20px;
+    overflow: hidden; /* Clearing the float */
+}
+
+.form-label-test_drive {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-input-test_drive {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.form-input-test_drive[type="submit"] {
+    background-color: #FFA500; /* Orange color for the button */
+    color: white;
+    cursor: pointer;
+}
+
+.form-input-test_drive[type="submit"]:hover {
+    background-color: #FF8C00; /* Darker shade on hover */
+}
+
+.image-test_drive {
+    float: left;
+    width: calc(54.3% - 20px); /* Adjusted width to match the form width */
+    max-width: 100%; /* Ensure image does not exceed its container */
+    border-radius: 8px;
+    margin-right: 3%;
+}
