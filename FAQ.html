@@ -9,315 +9,274 @@
     <link rel="stylesheet" href="./external.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!--
-    Per buton bottom right
-    -->
-    <style>
-    
-    #scrollToTop {
-    background-color: orange;
-    border: 2px solid orange;
-    color: orange;
-    transition: background-color 0.3s, color 0.3s;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}    
-#scrollToTop:hover {
-    background-color: white;
-    color: orange;
+    <!--Per buton bottom right-->
+    <style>    
+        #scrollToTop {
+            background-color: orange;
+            border: 2px solid orange;
+            color: orange;
+            transition: background-color 0.3s, color 0.3s;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }    
+        #scrollToTop:hover {
+            background-color: white;
+            color: orange;
         }
-</style>
+    </style>
 </head>
-<header>
-    <div class="container-fluid pb-0" style="background-color: black;"> 
-        <div class="row justify-content-center align-items-center vh-100">
-            
-            <nav class="navbar navbar-expand-lg align-items-center ml-5" style="width: 90%;"> 
-                <div class="container">
 
-                    
-                    <a class="navbar-brand" href="./Home.html">
-                        <img src="./pictures/image.jpg" alt="Home" class="logo" width="200">
-                    </a>
-
-                    
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto d-flex">
-                            <li class="nav-item flex-fill">
-                                <a class="nav-link font-weight-bold align-middle" href="./Home.html">HOME</a>
-                            </li>
-                            <li class="nav-item flex-fill">
-                                <a class="nav-link font-weight-bold align-middle" href="./CARS.html">STOCK</a>
-                            </li>
-                            <li class="nav-item flex-fill">
-                                <a class="nav-link font-weight-bold align-middle" href="./Workers.html">STAFF</a>
-                            </li>
-                            <li class="nav-item flex-fill">
-                                <a class="nav-link font-weight-bold align-middle" href="./FAQ.html">FAQ</a>
-                            </li>
-                            <li class="nav-item flex-fill">
-                                <a class="nav-link font-weight-bold align-middle" href="./AboutUs.html">ABOUT</a>
-                            </li>
-                            <li class="nav-item flex-fill">
-                                <a class="nav-link font-weight-bold align-middle" href="./Contact.html">CONTACT</a>
-                            </li>
-                        </ul>
+<body>
+    
+    <header>
+        <div class="container-fluid pb-0" style="background-color: black;"> 
+            <div class="row justify-content-center align-items-center vh-100">
+                <nav class="navbar navbar-expand-lg align-items-center ml-5" style="width: 90%;"> 
+                    <div class="container">
+                        <a class="navbar-brand" href="./Home.html"><img src="./pictures/image.jpg" alt="Home" class="logo" width="200"></a>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto d-flex">
+                                <li class="nav-item flex-fill"><a class="nav-link font-weight-bold align-middle" href="./Home.html">HOME</a></li>
+                                <li class="nav-item flex-fill"><a class="nav-link font-weight-bold align-middle" href="./CARS.html">STOCK</a></li>
+                                <li class="nav-item flex-fill"><a class="nav-link font-weight-bold align-middle" href="./Workers.html">STAFF</a></li>
+                                <li class="nav-item flex-fill"><a class="nav-link font-weight-bold align-middle" href="./FAQ.html">FAQ</a></li>
+                                <li class="nav-item flex-fill"><a class="nav-link font-weight-bold align-middle" href="./AboutUs.html">ABOUT</a></li>
+                                <li class="nav-item flex-fill"><a class="nav-link font-weight-bold align-middle" href="./Contact.html">CONTACT</a></li>
+                            </ul>
+                        </div>
                     </div>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <!-- FAQ Section 1 -->
+            <div class="card">
+                <div class="card-header border-warning" id="faqHeading1">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
+                            data-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                            Question 1: What is Horizon Autos?
+                        </button>
+                    </h5>
                 </div>
-            </nav>
+
+                <div id="faqCollapse1" class="collapse show" aria-labelledby="faqHeading1" data-parent="#faqAccordion">
+                    <div class="card-body border-top border-warning">
+                        Answer 1: Horizon Autos is a leading car dealership providing a wide range of high-quality
+                        vehicles.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section 2 -->
+            <div class="card">
+                <div class="card-header border-warning" id="faqHeading2">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
+                            data-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                            Question 2: How can I contact your staff?
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="faqCollapse2" class="collapse" aria-labelledby="faqHeading2" data-parent="#faqAccordion">
+                    <div class="card-body border-top border-warning">
+                        Answer 2: You can contact our staff by visiting the CONTACT page or calling us at
+                        +383 (0) 44 123-456.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section 3 -->
+            <div class="card">
+                <div class="card-header border-warning" id="faqHeading3">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
+                            data-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                            Question 3: What types of cars do you have in stock?
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="faqCollapse3" class="collapse" aria-labelledby="faqHeading3" data-parent="#faqAccordion">
+                    <div class="card-body border-top border-warning">
+                        Answer 3: We have a diverse inventory including sedans, SUVs, trucks, and luxury vehicles.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section 4 -->
+            <div class="card">
+                <div class="card-header border-warning" id="faqHeading4">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
+                            data-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                            Question 4: Can I schedule a test drive online?
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="faqCollapse4" class="collapse" aria-labelledby="faqHeading4" data-parent="#faqAccordion">
+                    <div class="card-body border-top border-warning">
+                        Answer 4: Yes, you can schedule a test drive on our website by visiting the CONTACT page.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section 5 -->
+            <div class="card">
+                <div class="card-header border-warning" id="faqHeading5">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
+                            data-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                            Question 5: Are there financing options available?
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="faqCollapse5" class="collapse" aria-labelledby="faqHeading5" data-parent="#faqAccordion">
+                    <div class="card-body border-top border-warning">
+                        Answer 5: Yes, we offer financing options. Visit the CONTACT page for more information.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section 6 -->
+            <div class="card">
+                <div class="card-header border-warning" id="faqHeading6">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
+                            data-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
+                            Question 6: When are you open?
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="faqCollapse6" class="collapse" aria-labelledby="faqHeading6" data-parent="#faqAccordion">
+                    <div class="card-body border-top border-warning">
+                        Answer 6: To view our working hours check the table on the WORKERS .
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3">
+                <h3 class="text-center mb-4">Have more questions?</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="inputEmail">Your Email:</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputQuestions">Your Questions:</label>
+                        <textarea class="form-control" id="inputQuestions" rows="3"
+                            placeholder="Type your questions here"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-warning" style="border-color: orange; background-color: white; color: orange; font-size: 1.5em;"
+                        onmouseover="changeColors(this, 'orange', 'white')"
+                        onmouseout="changeColors(this, 'white', 'orange')"
+                        onmousedown="changeColors(this, 'orange', 'white')"
+                        onmouseup="changeColors(this, 'white', 'orange')"
+                        onclick="playAudio1()">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
-</header>
 
-
-
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
-
-    <div class="accordion" id="faqAccordion">
-        <!-- FAQ Section 1 -->
-        <div class="card">
-            <div class="card-header border-warning" id="faqHeading1">
-                <h5 class="mb-0">
-                    <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
-                        data-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
-                        Question 1: What is Horizon Autos?
-                    </button>
-                </h5>
-            </div>
-
-            <div id="faqCollapse1" class="collapse show" aria-labelledby="faqHeading1" data-parent="#faqAccordion">
-                <div class="card-body border-top border-warning">
-                    Answer 1: Horizon Autos is a leading car dealership providing a wide range of high-quality
-                    vehicles.
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQ Section 2 -->
-        <div class="card">
-            <div class="card-header border-warning" id="faqHeading2">
-                <h5 class="mb-0">
-                    <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
-                        data-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-                        Question 2: How can I contact your staff?
-                    </button>
-                </h5>
-            </div>
-
-            <div id="faqCollapse2" class="collapse" aria-labelledby="faqHeading2" data-parent="#faqAccordion">
-                <div class="card-body border-top border-warning">
-                    Answer 2: You can contact our staff by visiting the CONTACT page or calling us at
-                    +383 (0) 44 123-456.
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQ Section 3 -->
-        <div class="card">
-            <div class="card-header border-warning" id="faqHeading3">
-                <h5 class="mb-0">
-                    <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
-                        data-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-                        Question 3: What types of cars do you have in stock?
-                    </button>
-                </h5>
-            </div>
-
-            <div id="faqCollapse3" class="collapse" aria-labelledby="faqHeading3" data-parent="#faqAccordion">
-                <div class="card-body border-top border-warning">
-                    Answer 3: We have a diverse inventory including sedans, SUVs, trucks, and luxury vehicles.
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQ Section 4 -->
-        <div class="card">
-            <div class="card-header border-warning" id="faqHeading4">
-                <h5 class="mb-0">
-                    <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
-                        data-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
-                        Question 4: Can I schedule a test drive online?
-                    </button>
-                </h5>
-            </div>
-
-            <div id="faqCollapse4" class="collapse" aria-labelledby="faqHeading4" data-parent="#faqAccordion">
-                <div class="card-body border-top border-warning">
-                    Answer 4: Yes, you can schedule a test drive on our website by visiting the CONTACT page.
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQ Section 5 -->
-        <div class="card">
-            <div class="card-header border-warning" id="faqHeading5">
-                <h5 class="mb-0">
-                    <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
-                        data-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
-                        Question 5: Are there financing options available?
-                    </button>
-                </h5>
-            </div>
-
-            <div id="faqCollapse5" class="collapse" aria-labelledby="faqHeading5" data-parent="#faqAccordion">
-                <div class="card-body border-top border-warning">
-                    Answer 5: Yes, we offer financing options. Visit the CONTACT page for more information.
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQ Section 6 -->
-        <div class="card">
-            <div class="card-header border-warning" id="faqHeading6">
-                <h5 class="mb-0">
-                    <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
-                        data-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
-                        Question 6: When are you open?
-                    </button>
-                </h5>
-            </div>
-
-            <div id="faqCollapse6" class="collapse" aria-labelledby="faqHeading6" data-parent="#faqAccordion">
-                <div class="card-body border-top border-warning">
-                    Answer 6: To view our working hours check the table on the WORKERS .
-                </div>
-            </div>
-        </div>
+    <div>
+        <br>
     </div>
-    <div class="row mt-5">
-        <div class="col-md-6 offset-md-3">
-            <h3 class="text-center mb-4">Have more questions?</h3>
-            <form>
-                <div class="form-group">
-                    <label for="inputEmail">Your Email:</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <label for="inputQuestions">Your Questions:</label>
-                    <textarea class="form-control" id="inputQuestions" rows="3"
-                        placeholder="Type your questions here"></textarea>
-                </div>
-                <button type="submit" class="btn btn-warning" style="border-color: orange; background-color: white; color: orange; font-size: 1.5em;"
-                    onmouseover="changeColors(this, 'orange', 'white')"
-                    onmouseout="changeColors(this, 'white', 'orange')"
-                    onmousedown="changeColors(this, 'orange', 'white')"
-                    onmouseup="changeColors(this, 'white', 'orange')"
-                    onclick="playAudio1()">Submit</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div>
-    <br>
-</div>
 
 
-<a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()">Scroll To Top</a>
+    <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()">Scroll To Top</a>
 
 
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-<footer class="background-black middle-section">
-    <div class="row">
-        <hr>
-     </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-6">
+        <footer class="background-black">
+            <br><br>
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-3">
-                        <ul style="list-style-type: square;">
-                            <li><a class="nav-link font-weight-bold align-middle" href="./Home.html">HOME</a></li>
-                            <li><a class="nav-link font-weight-bold align-middle" href="./CARS.html">STOCK</a></li>
-                            <li><a class="nav-link font-weight-bold align-middle" href="./Workers.html">STAFF</a></li>
-                        </ul>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-3">
+                                <ul style="list-style-type: square;">
+                                    <li><a class="nav-link font-weight-bold align-middle" href="./Home.html">HOME</a></li>
+                                    <li><a class="nav-link font-weight-bold align-middle" href="./CARS.html">STOCK</a></li>
+                                    <li><a class="nav-link font-weight-bold align-middle" href="./Workers.html">STAFF</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-3">
+                                <ul>
+                                    <li><a class="nav-link font-weight-bold align-middle" href="./FAQ.html">FAQ</a></li>
+                                    <li><a class="nav-link font-weight-bold align-middle" href="./AboutUs.html">ABOUT</a></li>
+                                    <li><a class="nav-link font-weight-bold align-middle" href="./Contact.html">CONTACT</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-3">
-                        <ul>
-                            <li><a class="nav-link font-weight-bold align-middle" href="./FAQ.html">FAQ</a></li>
-                            <li><a class="nav-link font-weight-bold align-middle" href="./AboutUs.html">ABOUT</a></li>
-                            <li><a class="nav-link font-weight-bold align-middle" href="./Contact.html">CONTACT</a></li>
-                        </ul>
+        
+                    <div class="col-6">
+                        <h1>Contact us</h1>
+                        <ul style="list-style-type: square;">
+                            <li><a href="tel:+38344123465">Call Us: +383 (0) 44 123-456</a></li>
+                            <li><a href="mailto:projekti@web.com">Email Us: projekti@web.com</a></li>
+                            <li><a href="https://www.google.com/maps/place/Fakulteti+Teknik/@42.6487697,21.1667975,19z/data=!4m6!3m5!1s0x13549ec1b6ecb2c1:0x7f0893730efce187!8m2!3d42.6487907!4d21.1671507!16s%2Fm%2F0j63ycv?entry=ttu" target="_blank"><address>Bregu i Diellit p.n 10000, Pristina, Kosova</address></a></li>
+                        </ul>   
                     </div>
                 </div>
-            </div>
-
-            <div class="col-6">
-                <h1>Contact us</h1>
-                <ul style="list-style-type: square;">
-                    <li><a href="tel:+38344123465">Call Us: +383 (0) 44 123-456</a></li>
-                    <li><a href="mailto:projekti@web.com">Email Us: projekti@web.com</a></li>
-                    <li><a href="https://www.google.com/maps/place/Fakulteti+Teknik/@42.6487697,21.1667975,19z/data=!4m6!3m5!1s0x13549ec1b6ecb2c1:0x7f0893730efce187!8m2!3d42.6487907!4d21.1671507!16s%2Fm%2F0j63ycv?entry=ttu" target="_blank"><address>Bregu i Diellit p.n 10000, Pristina, Kosova</address></a></li>
-                </ul>   
-            </div>
-        </div>
+                
+                <hr class="hr-footer">
+                
+                <div class="row align-items-center">
+                    <div class="col-6">&copy; Horizon Autos</div>
+                    <div class="col-6">Follow us:
+                        <a href="https://example.com/facebook" target="_blank" class="overwrite"><img src="./pictures/facebook.png" alt="Facebook Icon" width="80" height="80" style="margin-right: 10px;"></a>
+                        <a href="https://example.com/instagram" target="_blank" class="overwrite"><img src="./pictures/insta1.png" alt="Instagram Icon" width="75" height="75"></a>
+                    </div>
+                </div>
         
-        <hr class="hr-footer">
-        
-        <div class="row align-items-center">
-    <div class="col-6">
-        &copy; Horizon Autos
-    </div>
-    <div class="col-6">
-        Follow us:
-        <a href="https://example.com/facebook" target="_blank" class="overwrite">
-            <img src="./pictures/facebook.png" alt="Facebook Icon" width="80" height="80" style="margin-right: 10px;">
-        </a>
-        <a href="https://example.com/instagram" target="_blank" class="overwrite">
-            <img src="./pictures/insta1.png" alt="Instagram Icon" width="75" height="75">
-        </a>
-    </div>
-</div>
+                <div class="row">
+                    <hr>
+                </div>
+            </div>    
+        </footer>
 
-<div class="row">
-    <hr>
- </div>
-</footer>
-
-<script>
-    function scrollToTopAndPlayAudio() {
-        // Call the playAudio function
-        playAudio();
-
-        // Scroll to the top
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-    function changeColors(element, bgColor, textColor) {
+    <script>
+        function scrollToTopAndPlayAudio() {
+            // Call the playAudio function
+            playAudio();
+            // Scroll to the top
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    
+        function changeColors(element, bgColor, textColor) {
             element.style.backgroundColor = bgColor;
             element.style.color = textColor;
         }
-        
-    function playAudio() {
-        
-        var audio = new Audio('./pictures/whoosh.mp3');
-        
-        
-        if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {
-            audio.play();
-        }
-    }
-    function playAudio1() {
-        
-        var audio = new Audio('./pictures/Ding - Sound Effect (HD).mp3');
-        
-        
-        if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {
-            audio.play();
-        }
-    }
-</script>
 
+        function playAudio() {
+            var audio = new Audio('./pictures/whoosh.mp3');
+            if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {audio.play();}
+        }
+
+        function playAudio1() {
+            var audio = new Audio('./pictures/Ding - Sound Effect (HD).mp3');
+            if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {audio.play();}
+        }
+    </script>
 </body>
 </html>
