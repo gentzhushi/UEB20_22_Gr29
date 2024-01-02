@@ -30,6 +30,31 @@
             align-items: center;
             justify-content: center;
         }
+
+        .benefit-icon {
+            width: 50px; /* Adjust the size as needed */
+            height: 50px;
+            margin-bottom: 10px; /* Add margin to the bottom */
+            padding: 5px; /* Add padding to the icon */
+        }
+
+        .benefit-card {
+            border: none; /* Remove the default card border */
+            border-radius: 15px; /* Add rounded corners for a modern look */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+        }
+
+        .benefit-card img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .benefit-card .card-body {
+            padding: 20px;
+        }
     </style>
 </head>
 
@@ -86,7 +111,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./pictures/Lamborghini-Huracan-STO.jpg" class="d-block w-100" alt="Car Photo 2">
+                <img src="./pictures/showcase-cars.jpg" class="d-block w-100" alt="Car Photo 2">
                 <div class="overlay-text">
                     <p><strong>About Horizon Autos</strong></p>
                     <p><i>Experience the unmatched quality of our vehicles at Horizon Autos.</i></p>
@@ -99,7 +124,6 @@
                     <p><i>Learn about our successful sales and commitment to customer satisfaction at Horizon Autos.</i></p>
                 </div>
             </div>
-            <!-- Add more carousel items with different images as needed -->
         </div>
         <a class="carousel-control-prev" href="#imageSlider" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -111,61 +135,50 @@
         </a>
     </div>
 
-    <div class="container mt-5 custom-container">
-        <!-- Content about Horizon Autos -->
-        <p>Welcome to Horizon Autos, your gateway to the finest automobiles in the market. At Horizon Autos, we take pride in offering a curated selection of luxurious cars that redefine driving experiences.</p>
-        <p>Our mission is to provide our customers with not just cars but with a journey of sophistication, performance, and unrivaled quality. With a commitment to excellence, we bring you the latest models from the world's most renowned brands, meticulously chosen for their design, innovation, and driving dynamics.</p>
-        <p>Driven by a passion for perfection, our team at Horizon Autos is dedicated to ensuring that every customer finds their dream car. Whether you seek the electrifying speed of a hypercar or the refined luxury of a premium sedan, we have a collection that caters to diverse tastes and preferences.</p>
+    <div class="container mt-5">
+        <!-- Added Made-up History -->
+        <h2 class="text-center mb-4">Our Story</h2>
+        <p>Founded in 1995, Horizon Autos started as a humble venture with a passion for automobiles and a commitment to delivering unparalleled driving experiences. Over the years, we have evolved into a premier destination for luxury cars, earning the trust and loyalty of our esteemed customers.</p>
+        <p>Our journey is marked by a relentless pursuit of excellence, curating a collection that reflects the epitome of automotive craftsmanship. Each car in our inventory is meticulously selected, embodying the perfect blend of design, innovation, and performance.</p>
+        <p>At Horizon Autos, we believe in more than selling cars; we believe in creating memories. Our team is dedicated to ensuring that every customer finds their dream car, making each purchase a milestone in their automotive journey.</p>
     </div>
 
-    <hr class="hr-footer">
-    <h2 class="text-center mb-4">Why Choose Horizon Autos?</h2>
     <div class="container mt-5">
+        <h2 class="text-center mb-4">Benefits of Working with Us</h2>
         <div class="row">
-            <!-- Your existing reasons to choose Horizon Autos -->
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <img src="./pictures/chat.png" class="card-img-top mx-auto" alt="Image 1" style="width: 20%;">
+                    <img src="./pictures/benefit1-icon.png" class="card-img-top mx-auto" alt="Benefit 1 Icon" style="width: 20%; margin-top: 20px;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Quality Reviews</h5>
-                        <p class="card-text">Around 95% of our reviews online are very positive!</p>
+                        <h5 class="card-title">Exclusive Access</h5>
+                        <p class="card-text">Gain exclusive access to pre-release models and limited editions, ensuring you're always ahead in the world of automotive luxury.</p>
                     </div>
                 </div>
             </div>
-
+    
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <img src="./pictures/handshake.png" class="card-img-top mx-auto" alt="Image 2" style="width: 20%;">
+                    <img src="./pictures/benefit2-icon.png" class="card-img-top mx-auto" alt="Benefit 2 Icon" style="width: 20%;  margin-top: 20px;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Trusted Dealership</h5>
-                        <p class="card-text">All our customers leave with a negotiation process and deal that satisfies them!</p>
+                        <h5 class="card-title">Personalized Service</h5>
+                        <p class="card-text">Experience personalized service with our dedicated team, tailoring every aspect to match your unique preferences and requirements.</p>
                     </div>
                 </div>
             </div>
-
+    
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <img src="./pictures/electric-car.png" class="card-img-top mx-auto" alt="Image 3" style="width: 20%;">
+                    <img src="./pictures/benefit3-icon.png" class="card-img-top mx-auto" alt="Benefit 3 Icon" style="width: 20%;  margin-top: 20px;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Excellcent Cars</h5>
-                        <p class="card-text">Our company offers cars from all the best global brands, at a premium price!</p>
+                        <h5 class="card-title">Lifetime Warranty</h5>
+                        <p class="card-text">Enjoy peace of mind with our exclusive lifetime warranty, ensuring that your investment is protected for the entirety of your ownership.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <hr class="hr-footer">
-
-    <div class="container1">
-        <h2>Subscribe to Our Newsletter</h2>
-        <p>Stay updated with the latest news and offers.</p>
-        <form action="#" method="post">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <input type="submit" value="Subscribe">
-        </form>
-    </div>
 
     <footer class="background-black">
         <div class="row">
@@ -211,17 +224,17 @@
         <div class="col-6">
             Follow us:
             <a href="https://example.com/facebook" target="_blank" class="overwrite">
-                <img src="./pictures/facebook.png" alt="Facebook Icon" width="80" height="80" style="margin-right: 10px;">
+                <img src="./pictures/facebook.png" alt="Facebook Icon" width="40" height="40" style="margin-right: 10px;">
             </a>
             <a href="https://example.com/instagram" target="_blank" class="overwrite">
-                <img src="./pictures/insta1.png" alt="Instagram Icon" width="75" height="75">
+                <img src="./pictures/insta1.png" alt="Instagram Icon" width="40" height="40">
             </a>
         </div>
     </div>
     
     <div class="row">
         <hr>
-     </div>>
+    </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
