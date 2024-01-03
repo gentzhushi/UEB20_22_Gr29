@@ -41,7 +41,7 @@ a:visited {
     text-decoration: none !important;
 }
 a:hover{
-    color: yellow !important;
+    color: orange !important;
     text-decoration: underline !important;
 }
 
@@ -138,47 +138,7 @@ input[type="submit"]:hover{
 }
 
 /*----------------------------------------------------------------------*/
-fieldset {
-    border: 2px solid orange;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 20px;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5%;
-}
 
-legend {
-    font-size: 1.5em;
-    color: orange;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-input, select {
-    width: calc(100% - 16px);
-    padding: 10px;
-    margin-bottom: 12px;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: orange;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    cursor: pointer;
-}
-
-#result {
-    margin-top: 20px;
-}
 /*---------------------------------------------------------------------*/
 #scrollToTop {
     background-color: orange;
@@ -248,4 +208,85 @@ button {
 
 .choose-us{
     height: 250px;
+}
+
+.margin-bottom-auto{
+    margin-bottom: auto;
+}
+
+.leasing-form-container {
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    border: 5px double orange;
+    border-radius: 8px;
+    margin-top: 5%;
+}
+
+.leasing-form-text {
+    margin-bottom: 20px;
+}
+
+.leasing-form-legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.leasing-form-label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.leasing-form-input,
+.leasing-form-select {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+.leasing-form-button {
+    background-color: #FFA500;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.leasing-form-button:hover {
+    background-color: #FF8C00;
+}
+
+.leasing-form-result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+table{
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    overflow:hidden;
+}
+th, td {
+    border: none; 
+    padding: 8px;
+}
+
+.orari-container{
+    margin-left: calc(20%);
+    margin-right: calc(20%);
+}
+
+th {
+    background-color: #FF8C00; 
+    color: white; 
+}
+
+td {
+    background-color: whitesmoke; 
 }

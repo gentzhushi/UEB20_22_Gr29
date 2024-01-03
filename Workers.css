@@ -7,8 +7,8 @@ text-transform: capitalize;
 }
 
 .tm-black-bg {
-    background-color:orange;
-    color: rgb(255, 255, 255);
+    background-color: rgb(240, 150, 54);
+    color: rgb(0, 0, 0);
 }
 
 .tm-nosa-nav > ul > li { display: inline-block; }
@@ -43,8 +43,7 @@ text-transform: capitalize;
     margin-right: 20px;
     width: 160px;
     height: 160px;
-    border-style: solid;
-    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
 }
 
 
@@ -52,7 +51,7 @@ text-transform: capitalize;
     padding: 20px 25px;
     flex: 1;
 }
-
+.tm-footer-link { color: rgb(0, 0, 0); }
 .tm-tab-content { animation: fadeEffect 1.5s; }
 .tm-page-content { animation: fadeEffect 1.5s;
 }
@@ -64,11 +63,11 @@ text-transform: capitalize;
 }
 
 .tm-list-item-name{
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .tm-list-item-description{
-    color: #ffffff;
+    color: #000000;
 }
 
 .kontenti{
