@@ -8,7 +8,9 @@ text-transform: capitalize;
 
 .tm-black-bg {
     background-color: rgb(240, 150, 54);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+border-radius: 5px;
+
 }
 
 .tm-nosa-nav > ul > li { display: inline-block; }
@@ -20,12 +22,14 @@ text-transform: capitalize;
     align-items: center;
     justify-content: space-around;
     height: 100%;
+    
+
 }
 
 .tm-nosa-nav > ul > li a.active,
 .tm-nosa-nav > ul > li a:hover {
     
-    border-bottom: 4px solid #09b3a2;
+    border-bottom: 4px solid #ffffff;
 }
 
 .tm-list-item {
@@ -43,15 +47,17 @@ text-transform: capitalize;
     margin-right: 20px;
     width: 160px;
     height: 160px;
-    background-color: rgb(0, 0, 0);
+border-radius: 5px;
+
 }
 
 
 .tm-list-item-text {
     padding: 20px 25px;
     flex: 1;
+border-radius: 5px;
+
 }
-.tm-footer-link { color: rgb(0, 0, 0); }
 .tm-tab-content { animation: fadeEffect 1.5s; }
 .tm-page-content { animation: fadeEffect 1.5s;
 }
@@ -63,11 +69,11 @@ text-transform: capitalize;
 }
 
 .tm-list-item-name{
-    color: rgb(0, 0, 0);
+    color: rgb(254, 254, 254);
 }
 
 .tm-list-item-description{
-    color: #000000;
+    color: #ffffff;
 }
 
 .kontenti{
