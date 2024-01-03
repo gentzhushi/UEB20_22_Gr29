@@ -265,3 +265,26 @@ input[type="submit"]:hover{
     margin-top: 20px;
     font-weight: bold;
 }
+
+table{
+    width: 100%;
+    text-align: center;
+}
+th, td {
+    border: 1px solid black; 
+    padding: 8px;
+}
+
+.orari-container{
+    margin-left: calc(20%);
+    margin-right: calc(20%);
+}
+
+th {
+    background-color: #FF8C00; 
+    color: white; 
+}
+
+td {
+    background-color: #FFE4B5; 
+}
