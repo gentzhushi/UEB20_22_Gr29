@@ -7,12 +7,53 @@ body {
     background-size:20%; /* Adjust as needed, 'cover' will make sure the image covers the entire body */
 }
 
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em;
+* {
+    font-family:Arial, Helvetica, sans-serif
 }
+
+.background-black{
+    background-color: black;
+    color:whitesmoke;
+}   
+
+.text-bold {
+    font-weight: bold;
+}
+
+hr.hr-footer {
+    border: 0.1px solid rgb(52, 52, 52);
+    border-radius: 5px;
+}
+
+
+
+hr.hr-body {
+    margin: 5%;
+    border: 0.1px solid rgb(212, 212, 212);
+    border-radius: 5px;
+}
+
+.footeri-anash {
+    display: inline-block;
+    width: 48%; /* Adjust the width as needed */
+    margin-right: 2%; /* Add some margin between the divs */
+}
+
+a {
+    color: white !important;
+    text-decoration: none !important; /* Remove underline */
+}
+
+/* Styling for visited links */
+a:visited {
+    color: white !important;
+    text-decoration: none !important;
+}
+a:hover{
+    color: orange !important;
+    text-decoration: underline !important;
+}
+
 
 section {
     max-width: 800px;
@@ -29,13 +70,18 @@ form {
 }
 
 button {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    border: none;
+    background-color: transparent; /* Transparent background */
+    color: #ffc107; /* Yellow text */
+    padding: 10px 20px;
+    border: 2px solid #ffc107; /* Yellow border */
+    border-radius: 4px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 10px; /* Add some spacing between buttons */
 }
 
-button:hover {
-    background-color: #555;
+button:hover{
+    background-color: #ffc107; /* Yellow background on hover */
+    color: #fff; /* White text on hover */
+    border-color: #fff; /* White border on hover */
 }
