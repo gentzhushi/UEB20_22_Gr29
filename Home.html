@@ -215,18 +215,15 @@
 
     <hr class="hr-body">
 
-    <!--Newsletter-->
     <div class="container1">
         <h2>Subscribe to Our Newsletter</h2>
         <p>Stay updated with the latest news and offers.</p>
-        <form action="#" method="post">
+        <form action="#" method="post" onsubmit="return showConfirmation()">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             <input type="submit" value="Subscribe">
         </form>
     </div>
-
-    <hr class="hr-body">
 
     <!--Per buton bottom right-->
     <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()">Scroll To Top</a>
@@ -292,6 +289,15 @@
         function playAudio() {        
             var audio = new Audio('./pictures/whoosh.mp3');
             if (audio.canPlayType && audio.canPlayType('audio/mpeg')) { audio.play(); }
+        }
+    </script>
+     <script>
+        function showConfirmation() {
+            
+            var confirmSubscribe = confirm("You will be informed with every email we send to our customers, sure you want to continue?");
+
+            
+            return confirmSubscribe;
         }
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

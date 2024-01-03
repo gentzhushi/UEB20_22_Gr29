@@ -171,22 +171,21 @@
         <div class="row mt-5">
             <div class="col-md-6 offset-md-3">
                 <h3 class="text-center mb-4">Have more questions?</h3>
-                <form>
+                <form id="questionsForm">
                     <div class="form-group">
                         <label for="inputEmail">Your Email:</label>
                         <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
                     </div>
                     <div class="form-group">
                         <label for="inputQuestions">Your Questions:</label>
-                        <textarea class="form-control" id="inputQuestions" rows="3"
-                            placeholder="Type your questions here"></textarea>
+                        <textarea class="form-control" id="inputQuestions" rows="3" placeholder="Type your questions here"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-warning" style="border-color: orange; background-color: white; color: orange; font-size: 1.5em;"
+                    <button type="button" class="btn btn-warning" style="border-color: orange; background-color: white; color: orange; font-size: 1.5em;"
                         onmouseover="changeColors(this, 'orange', 'white')"
                         onmouseout="changeColors(this, 'white', 'orange')"
                         onmousedown="changeColors(this, 'orange', 'white')"
                         onmouseup="changeColors(this, 'white', 'orange')"
-                        onclick="playAudio1()">Submit</button>
+                        onclick="submitForm()">Submit</button>
                 </form>
             </div>
         </div>
@@ -263,6 +262,23 @@
             element.style.backgroundColor = bgColor;
             element.style.color = textColor;
         }
+        function submitForm() {
+        var email = document.getElementById('inputEmail').value;
+        var questions = document.getElementById('inputQuestions').value;
+
+        // Basic email validation
+        if (validateEmail(email)) {
+            document.getElementById('questionsForm').submit();  
+        } else {
+            alert('Invalid email address. Please enter a valid email.');
+        }
+    }
+
+    // Function to validate email using a regular expression
+    function validateEmail(email) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
 
         function playAudio() {
             var audio = new Audio('./pictures/whoosh.mp3');
