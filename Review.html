@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Car Dealership Reviews</title>
+</head>
+<body>
+    <header>
+        <h1>Car Dealership Reviews</h1>
+    </header>
+    <section id="calculations">
+        <h2>Review Statistics</h2>
+        <p id="average-rating">Average Rating: N/A</p>
+        <p id="star-counts">5 Stars: 0 | 4 Stars: 0 | 3 Stars: 0 | 2 Stars: 0 | 1 Star: 0</p>
+    </section>
+    <section id="add-review">
+        <h2>Add Your Review</h2>
+        <form id="review-form">
+            <label for="dealer-name">Dealer Name:</label>
+            <input type="text" id="dealer-name" required>
+
+            <label for="rating">Rating:</label>
+            <div id="rating">
+                <input type="radio" id="5-stars" name="rating" value="5" checked>
+                <label for="5-stars">5 Stars</label>
+
+                <input type="radio" id="4-stars" name="rating" value="4">
+                <label for="4-stars">4 Stars</label>
+
+                <input type="radio" id="3-stars" name="rating" value="3">
+                <label for="3-stars">3 Stars</label>
+
+                <input type="radio" id="2-stars" name="rating" value="2">
+                <label for="2-stars">2 Stars</label>
+
+                <input type="radio" id="1-star" name="rating" value="1">
+                <label for="1-star">1 Star</label>
+            </div>
+
+            <label for="review">Your Review:</label>
+            <textarea id="review" required></textarea>
+
+            <button type="button" onclick="submitReview()">Submit Review</button>
+        </form>
+    </section>
+
+    <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <!-- Display reviews here dynamically using JavaScript -->
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
