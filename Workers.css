@@ -7,8 +7,8 @@ text-transform: capitalize;
 }
 
 .tm-black-bg {
-    background-color: rgba(0,0,0,0.6);
-    color: white;
+    background-color:orange;
+    color: rgb(255, 255, 255);
 }
 
 .tm-nosa-nav > ul > li { display: inline-block; }
@@ -43,7 +43,8 @@ text-transform: capitalize;
     margin-right: 20px;
     width: 160px;
     height: 160px;
-    background-color: cadetblue;
+    border-style: solid;
+    border-radius: 5px;
 }
 
 
@@ -51,9 +52,9 @@ text-transform: capitalize;
     padding: 20px 25px;
     flex: 1;
 }
-.tm-footer-link { color: white; }
-.tm-tab-content { animation: fadeEffect 1s; }
-.tm-page-content { animation: fadeEffect 1s;
+
+.tm-tab-content { animation: fadeEffect 1.5s; }
+.tm-page-content { animation: fadeEffect 1.5s;
 }
 
 /* nga zero ne full opacity */
@@ -63,10 +64,14 @@ text-transform: capitalize;
 }
 
 .tm-list-item-name{
-    color: #323128;
+    color: rgb(255, 255, 255);
 }
 
 .tm-list-item-description{
-    color: #010101;
+    color: #ffffff;
 }
 
+.kontenti{
+    margin: 200px;
+    margin-top: 20px;
+}
