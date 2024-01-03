@@ -269,9 +269,11 @@ input[type="submit"]:hover{
 table{
     width: 100%;
     text-align: center;
+    border-radius: 10px;
+    overflow:hidden;
 }
 th, td {
-    border: 1px solid black; 
+    border: none; 
     padding: 8px;
 }
 
@@ -286,5 +288,5 @@ th {
 }
 
 td {
-    background-color: #FFE4B5; 
+    background-color: whitesmoke; 
 }
