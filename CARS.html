@@ -399,30 +399,33 @@
     <!-- Java Scriptat -->
     <script>
         function calculateLeasing() {
-            // Get input values
-            const carPrice = parseFloat(document.getElementById("carPrice").value);
-            const months = parseInt(document.getElementById("months").value);
-      
-            // Validate inputs
-            if (isNaN(carPrice) || isNaN(months) || carPrice <= 0 || months <= 0) {
-                alert("Please enter valid numbers for Car Price and Number of Months.");
-                return;
-            }
-      
-            // Calculate downpayment (20% of the car price)
-            const downpayment = 0.2 * carPrice;
-      
-            // Calculate monthly payment (rest of the price evenly distributed among the months)
-            const monthlyPayment = (carPrice - downpayment) / months;
-      
-            // Display the result
-            const resultElement = document.getElementById("result");
-            resultElement.innerHTML = `
-                <h3>Leasing Summary</h3>
-                <p>Downpayment: $${downpayment.toFixed(2)}</p>
-                <p>Monthly Payment: $${monthlyPayment.toFixed(2)}</p>
-            `;
+    try {
+        // Get input values
+        const carPrice = parseFloat(document.getElementById("carPrice").value);
+
+        // Check if any input is negative, and throw an error if true
+        if (isNaN(carPrice) || carPrice <= 0) {
+            throw new Error("Please enter a positive value of car price!");
         }
+
+        // Calculate downpayment (20% of the car price)
+        const downpayment = 0.2 * carPrice;
+
+        // Calculate monthly payment (rest of the price evenly distributed among the months)
+        const monthlyPayment = (carPrice - downpayment) / months;
+
+        // Display the result
+        const resultElement = document.getElementById("result");
+        resultElement.innerHTML = `
+            <h3>Leasing Summary</h3>
+            <p>Downpayment: $${downpayment.toFixed(2)}</p>
+            <p>Monthly Payment: $${monthlyPayment.toFixed(2)}</p>
+        `;
+    } catch (error) {
+        // Handle the error and display a message
+        alert("Error: " + error.message);
+    }
+}
     </script>
     <script>
         function scrollToTopAndPlayAudio() {
