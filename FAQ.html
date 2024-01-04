@@ -13,7 +13,7 @@
     <style>    
        #scrollToTop {
             font-size: 15px;
-            background-color: orange;
+            background: linear-gradient(to right, #ffd700, #ffa500); /* Transparent background */
             color: white !important;
             position: fixed;
             border: none;
@@ -70,7 +70,6 @@
                         </button>
                     </h5>
                 </div>
-
                 <div id="faqCollapse1" class="collapse show" aria-labelledby="faqHeading1" data-parent="#faqAccordion">
                     <div class="card-body border-top border-warning">
                         Answer 1: Horizon Autos is a leading car dealership providing a wide range of high-quality
@@ -78,6 +77,8 @@
                     </div>
                 </div>
             </div>
+
+            <br>
 
             <!-- FAQ Section 2 -->
             <div class="card">
@@ -89,7 +90,6 @@
                         </button>
                     </h5>
                 </div>
-
                 <div id="faqCollapse2" class="collapse" aria-labelledby="faqHeading2" data-parent="#faqAccordion">
                     <div class="card-body border-top border-warning">
                         Answer 2: You can contact our staff by visiting the CONTACT page or calling us at
@@ -97,6 +97,8 @@
                     </div>
                 </div>
             </div>
+
+            <br>
 
             <!-- FAQ Section 3 -->
             <div class="card">
@@ -108,13 +110,14 @@
                         </button>
                     </h5>
                 </div>
-
                 <div id="faqCollapse3" class="collapse" aria-labelledby="faqHeading3" data-parent="#faqAccordion">
                     <div class="card-body border-top border-warning">
                         Answer 3: We have a diverse inventory including sedans, SUVs, trucks, and luxury vehicles.
                     </div>
                 </div>
             </div>
+
+            <br>
 
             <!-- FAQ Section 4 -->
             <div class="card">
@@ -126,7 +129,6 @@
                         </button>
                     </h5>
                 </div>
-
                 <div id="faqCollapse4" class="collapse" aria-labelledby="faqHeading4" data-parent="#faqAccordion">
                     <div class="card-body border-top border-warning">
                         Answer 4: Yes, you can schedule a test drive on our website by visiting the CONTACT page.
@@ -134,8 +136,10 @@
                 </div>
             </div>
 
+            <br>
+
             <!-- FAQ Section 5 -->
-            <div class="card">
+            <div class="card n">
                 <div class="card-header border-warning" id="faqHeading5">
                     <h5 class="mb-0">
                         <button class="btn btn-link text-dark" type="button" data-toggle="collapse"
@@ -144,13 +148,14 @@
                         </button>
                     </h5>
                 </div>
-
                 <div id="faqCollapse5" class="collapse" aria-labelledby="faqHeading5" data-parent="#faqAccordion">
                     <div class="card-body border-top border-warning">
                         Answer 5: Yes, we offer financing options. Visit the CONTACT page for more information.
                     </div>
                 </div>
             </div>
+
+            <br>
 
             <!-- FAQ Section 6 -->
             <div class="card">
@@ -162,15 +167,16 @@
                         </button>
                     </h5>
                 </div>
-
                 <div id="faqCollapse6" class="collapse" aria-labelledby="faqHeading6" data-parent="#faqAccordion">
                     <div class="card-body border-top border-warning">
-                        Answer 6: To view our working hours check the table on the WORKERS .
+                        Answer 6: To view our working hours check the table on the About page.
                     </div>
                 </div>
             </div>
         </div>
+
         <br>
+        
         <div class="row mt-5">
             <div class="col-md-6 offset-md-3">
                 <h3 class="text-center mb-4">Have more questions?</h3>
@@ -183,12 +189,7 @@
                         <label for="inputQuestions">Your Questions:</label>
                         <textarea class="form-control" id="inputQuestions" rows="3" placeholder="Type your questions here"></textarea>
                     </div>
-                    <button type="button" class="btn btn-warning" style="border-color: orange; background-color: white; color: orange; font-size: 1.5em;"
-                        onmouseover="changeColors(this, 'orange', 'white')"
-                        onmouseout="changeColors(this, 'white', 'orange')"
-                        onmousedown="changeColors(this, 'orange', 'white')"
-                        onmouseup="changeColors(this, 'white', 'orange')"
-                        onclick="submitForm()">Submit</button>
+                    <button type="button" class="btn buton-portokalli-grad-linear d-flex mx-auto" onclick="submitForm()">Submit</button>
                 </form>
             </div>
         </div>

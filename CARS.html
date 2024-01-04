@@ -13,7 +13,7 @@
         /* Scroll to top butoni */
         #scrollToTop {
             font-size: 15px;
-            background-color: orange;
+            background: linear-gradient(to right, #ffd700, #ffa500); /* Transparent background */
             color: white !important;
             position: fixed;
             border: none;
@@ -335,7 +335,7 @@
             </p>
     
             <form style="margin-top: 5%;">
-                <legend class="leasing-form-legend">Leasing Calculator</legend>
+                <legend class="leasing-form-legend mx-auto d-flex">Leasing Calculator</legend>
                 <label for="carPrice" class="leasing-form-label">Car Price: $</label>
                 <input type="number" id="carPrice" class="leasing-form-input" required>
                 <br>          
@@ -347,7 +347,7 @@
                     <option value="48">48 months</option>
                 </select>
                 <br>          
-                <button type="button" onclick="calculateLeasing()" class="leasing-form-button">Calculate</button>          
+                <button type="button" onclick="calculateLeasing()" class="leasing-form-button buton-portokalli-grad-linear d-flex mx-auto">Calculate</button>          
                 <div id="result" class="leasing-form-result"></div>
             </form>
         </div>

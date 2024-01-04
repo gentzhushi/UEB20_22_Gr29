@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <style>
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  #divi1choose, #divi2choose, #divi3choose {
+    width: 200px;
+    height: 100px;
+    padding: 0.5em;
+    margin: 10px 10px 10px 0;
+    border: 1px solid #ccc;
+  }
+  </style>
+  <script>
+  $( function() {
+    var originalPositions = [];
+    originalPositions[0] = $('#divi1choose').position();
+    originalPositions[1] = $('#divi2choose').position();
+    originalPositions[2] = $('#divi3choose').position();
+
+    $( "#divi1choose, #divi2choose, #divi3choose" ).draggable();
+    $( "#divi1choose, #divi2choose, #divi3choose" ).droppable({
+      drop: function( event, ui ) {
+        var draggable = ui.draggable, droppable = $(this),
+            dragPos = draggable.position(), dropPos = droppable.position();
+        
+        draggable.css({
+            left: dropPos.left+'px',
+            top: dropPos.top+'px'
+        });
+
+        droppable.css({
+            left: dragPos.left+'px',
+            top: dragPos.top+'px'
+        });
+        draggable.swap(droppable);
+      }
+    });
+    
+    jQuery.fn.swap = function(b){ 
+        b = jQuery(b)[0]; 
+        var a = this[0]; 
+        var t = a.parentNode.insertBefore(document.createTextNode(''), a); 
+        b.parentNode.insertBefore(a, b); 
+        t.parentNode.insertBefore(b, t); 
+        t.parentNode.removeChild(t); 
+        return this; 
+    };
+
+    $('#resetButton').click(function() {
+      $('#divi1choose').css({
+        left: originalPositions[0].left+'px',
+        top: originalPositions[0].top+'px'
+      });
+      $('#divi2choose').css({
+        left: originalPositions[1].left+'px',
+        top: originalPositions[1].top+'px'
+      });
+      $('#divi3choose').css({
+        left: originalPositions[2].left+'px',
+        top: originalPositions[2].top+'px'
+      });
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<div class="container">
+  <div id="divi1choose" class="ui-widget-content">
+    <p>Div 1</p>
+  </div>
+   
+  <div id="divi2choose" class="ui-widget-content">
+    <p>Div 2</p>
+  </div>
+
+  <div id="divi3choose" class="ui-widget-content">
+    <p>Div 3</p>
+  </div>
+</div>
+
+<button id="resetButton">Reset Positions</button>
+ 
+</body>
+</html>
