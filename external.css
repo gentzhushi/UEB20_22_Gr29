@@ -136,26 +136,6 @@ input[type="submit"]:hover{
     background-color: yellow;
     color: white;
 }
-
-/*----------------------------------------------------------------------*/
-
-/*---------------------------------------------------------------------*/
-#scrollToTop {
-    background-color: orange;
-    border: 2px solid orange;
-    color: orange;
-    transition: background-color 0.3s, color 0.3s;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}    
-#scrollToTop:hover {
-    background-color: white;
-    color: orange;
-}
 /*---------------------------------------------------------------------*/
 .container1-test_drive {
     max-width: 600px; /* Increased max-width for better visibility */

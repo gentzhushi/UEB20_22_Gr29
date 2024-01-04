@@ -10,6 +10,24 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
+        #scrollToTop {
+            font-size: 15px;
+            background-color: orange;
+            color: white !important;
+            position: fixed;
+            border: none;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor:default;
+        }    
+
+        #scrollToTop:hover {
+            transform: scale(1.05);
+            text-decoration: none !important;
+        }
+        
         #imageSlider .carousel-inner .carousel-item {
             height: 500px;
         }
@@ -136,6 +154,8 @@
             </div>
         </div>
     </header>
+
+    <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()"><span>Scroll To Top</span></a>
 
     <div id="imageSlider" class="carousel slide image-container" data-ride="carousel">
         <div class="carousel-inner">

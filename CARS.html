@@ -12,22 +12,24 @@
     <style>
         /* Scroll to top butoni */
         #scrollToTop {
+            font-size: 15px;
             background-color: orange;
-            border: 2px solid orange;
-            color: orange;
-            transition: background-color 0.3s, color 0.3s;
+            color: white !important;
             position: fixed;
+            border: none;
             bottom: 20px;
             right: 20px;
             padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: 20px;
+            cursor:default;
         }    
 
         #scrollToTop:hover {
-            background-color: white;
-            color: orange;
+            transform: scale(1.05);
+            text-decoration: none !important;
         }
+
+
         #carList li ul {
             list-style: none;
             padding-left: 0;
@@ -83,7 +85,8 @@
     </header>
     <!-- Main Body -->
     <main>
-        <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()">Scroll To Top</a>
+
+        <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()"><span>Scroll To Top</span></a>
         <div class="container mt-5">
 
             <h1 class="mb-4" style="margin-top: 10%;">Featured</h1>
@@ -151,19 +154,30 @@
         </div>
 
         <hr class="hr-body">
+        
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+            <h1>Looking for something specific?</h1>
+        </div>    
+        
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+            <p>Search our whole stock below!</p>
+        </div>
+        
         <div class="col-md-6 mx-auto d-flex justify-content-center">
             <input type="search" id="searchInput" placeholder="Search your auto...">
         </div>
-            <div class="col-md-6 mx-auto d-flex justify-content-center">
-                <ol id="carList" class="hidden"></ol>
-            </div>
         
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+            <ol id="carList" class="hidden"></ol>
+        </div>
+        
+        <br><br><br>
 
-        <hr class="hr-body">
+        <!--<hr class="hr-body">-->
 
         <div class="container mt-4">
 
-            <h1 class="mb-4">Stock</h1>
+            <h1 class="mb-4">View our whole Stock</h1>
             
             <div class="row">
     
