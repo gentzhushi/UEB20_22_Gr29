@@ -1,0 +1,56 @@
+.hidden {
+    display: none;
+  }
+ /* Stilizimi për elementin input */
+#searchInput {
+  margin: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+  width: 300px;
+}
+
+/* Animacioni kur hovëroni mbi input-in */
+#searchInput:hover {
+  background-color: #f5f5f5;
+}
+
+/* Efekti kur input-i është në fokus */
+#searchInput:focus {
+  border-color: orange;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Stilizimi për listën e makinave */
+#carList {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 20px;
+  max-width: 400px;
+}
+
+/* Efekti kur kursori kalon mbi elementet e listës */
+#carList li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efekti kur kursori kalon mbi elementet e listës */
+#carList li:hover {
+  background-color: #f9f9f9;
+}
+
+/* Stilizimi për tekstin e çdo makine në listë */
+#carList li:last-child {
+  border-bottom: none;
+}
+
+/* Fshehja e listës kur nuk është në përdorim */
+.hidden {
+  display: none;
+}
