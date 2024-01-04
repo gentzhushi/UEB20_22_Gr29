@@ -50,6 +50,19 @@ function displayCalculations() {
         starCountsElement.textContent = `5 Stars: ${starCounts[4]} | 4 Stars: ${starCounts[3]} | 3 Stars: ${starCounts[2]} | 2 Stars: ${starCounts[1]} | 1 Star: ${starCounts[0]}`;
     }
 }
+$(document).ready(function() {
+    $("#show-reviews").click(function() {
+        $("#reviews").fadeIn(1000);
+        $("#show-reviews").hide();
+        $("#hide-reviews").show();
+    });
+
+    $("#hide-reviews").click(function() {
+        $("#reviews").fadeOut(1000);
+        $("#show-reviews").show();
+        $("#hide-reviews").hide();
+    });
+});
 
 function submitReview() {
     const dealerName = document.getElementById('dealer-name').value;
@@ -89,3 +102,4 @@ function submitReview() {
 
 displayReviews();
 displayCalculations();
+
