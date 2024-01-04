@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Autos - Stock</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./external.css">
+    <style>
+        /* Scroll to top butoni */
+        #scrollToTop {
+            font-size: 15px;
+            background-color: orange;
+            color: white !important;
+            position: fixed;
+            border: none;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor:default;
+        }    
+
+        #scrollToTop:hover {
+            transform: scale(1.05);
+            text-decoration: none !important;
+        }
+
+
+        #carList li ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 14px;
+            margin-top: 5px;
+            color: #888;
+        }
+        #carList li ul li {
+            margin-bottom: 5px;
+        }
+
+        
+    </style>
+    
+</head>
+
+<body>
+    <!-- Headeri -->
+    <header>
+        <div class="container-fluid pb-0" style="background-color: black;"> 
+            <div class="row justify-content-center align-items-center vh-100">            
+                <nav class="navbar navbar-expand-lg align-items-center ml-5" style="width: 90%;"> 
+                    <div class="container">                    
+                        <a class="navbar-brand" href="#">
+                            <img src="./pictures/image.jpg" alt="Home" class="logo" width="200">
+                        </a>                    
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto d-flex">
+                                <li class="nav-item flex-fill">
+                                    <a class="nav-link font-weight-bold align-middle" href="./Home.html">HOME</a>
+                                </li>
+                                <li class="nav-item flex-fill">
+                                    <a class="nav-link font-weight-bold align-middle" href="./CARS.html">STOCK</a>
+                                </li>
+                                <li class="nav-item flex-fill">
+                                    <a class="nav-link font-weight-bold align-middle" href="./Workers.html">STAFF</a>
+                                </li>
+                                <li class="nav-item flex-fill">
+                                    <a class="nav-link font-weight-bold align-middle" href="./FAQ.html">FAQ</a>
+                                </li>
+                                <li class="nav-item flex-fill">
+                                    <a class="nav-link font-weight-bold align-middle" href="./AboutUs.html">ABOUT</a>
+                                </li>
+                                <li class="nav-item flex-fill">
+                                    <a class="nav-link font-weight-bold align-middle" href="./Contact.html">CONTACT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Main Body -->
+    <main>
+
+        <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()"><span>Scroll To Top</span></a>
+        <div class="container mt-5">
+
+            <h1 class="mb-4" style="margin-top: 10%;">Featured</h1>
+
+            <div class="row">            
+                <div class="col-lg-6 mb-4 d-flex">
+                    <div class="row">
+                        <div class="col-lg-12 mb-4">
+                            <div class="card h-100">
+                                <a href="./CARS.html"><img src="./pictures/Porsche_918_Spyder.jpg" class="card-img-top img-fluid" alt="Car Image 1"></a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title" style="background-color: rgba(10, 10, 10, 0.2);">Porsche 918 Spyder</h5>
+                                    <p class="card-text">Hybrid hypercar: Porsche 918 Spyder, speed meets sustainability.</p>
+                                    <p class="card-text">The Porsche 918 Spyder is a plug-in hybrid sports car by the German automaker Porsche. It’s powered by a 4.6 L V8 engine and two electric motors, delivering a combined output of 887 horsepower and 944 lb-ft of torque. This power allows the 918 Spyder to accelerate from 0 to 60 mph in just 2.4 seconds. <br><br> The 918 Spyder is a testament to Porsche’s commitment to innovation and performance. It combines traditional and electric power in a way that sets new standards in the realm of sports cars. With its impressive specs and groundbreaking design, the 918 Spyder is more than just a car - it’s a symbol of Porsche’s innovative spirit and a benchmark for future hybrid sports cars. <br><br>Indeed, the 918 Spyder’s blend of power and innovation truly sets it apart in the world of high-performance vehicles</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-6 mb-4 d-flex">
+                    <div class="row">        
+                        <div class="col-lg-6 mb-4">
+                            <div class="card h-100 d-flex flex-column">
+                                <a href="./CARS.html"><img src="./pictures/Lamborghini-Huracan-STO.jpg" height="150px;" class="card-img-top img-fluid" alt="Car Image 2"></a>
+                                <div class="card-body text-center flex-grow-1">
+                                    <h5 class="card-title" style="background-color: rgba(10, 10, 10, 0.2)">Lamborghini Huracan STO</h5>
+                                    <p class="card-text">The Lamborghini Huracan STO is a super-sports car equipped with a powerful engine that delivers 640 horsepower and 565 Nm of torque. It can go from 0 to 62 mph in just 3.0 seconds.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-lg-6 mb-4">
+                            <div class="card h-100 d-flex flex-column">
+                                <a href="./CARS.html"><img src="./pictures/mercedes-amg-g63.jpg" height="150px;" class="card-img-top img-fluid" alt="Car Image 3"></a>
+                                <div class="card-body text-center flex-grow-1">
+                                    <h5 class="card-title" style="background-color: rgba(10, 10, 10, 0.2)">Mercedes-AMG GT63s Black Series</h5>
+                                    <p class="card-text">The Mercedes-AMG GT63s is a luxurious four-door coupe with a powerful V8 engine, delivering 630 horsepower and accelerating from 0 to 60 mph in 3.1 seconds.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-lg-6 mb-4">
+                            <div class="card h-100 d-flex flex-column">
+                                <a href="./CARS.html"><img src="./pictures/Senna.jpg" height="150px;" class="card-img-top img-fluid" alt="Car Image 4"></a>
+                                <div class="card-body text-center flex-grow-1">
+                                    <h5 class="card-title" style="background-color: rgba(10, 10, 10, 0.2)">McLaren Senna</h5>
+                                    <p class="card-text">The McLaren Senna is a high-performance coupe with a V8, 4.0L engine that delivers 789 horsepower. It can accelerate from 0 to 62 mph in just 2.8 seconds.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-lg-6 mb-4">
+                            <div class="card h-100 d-flex flex-column">
+                                <a href="./CARS.html"><img src="./pictures/Rolls-Royce-Spectre.jpg" height="150px;" class="card-img-top  img-fluid" alt="Car Image 5"></a>
+                                <div class="card-body text-center flex-grow-1">
+                                    <h5 class="card-title" style="background-color: rgba(10, 10, 10, 0.2)">Rolls-Royce Spectre</h5>
+                                    <p class="card-text">Debuting Q4 2023, The Rolls Royce Spectre is Rolls-Royce’s first all-electric vehicle. This car can accelerate from 0 to 62 miles per hour in 4.5 seconds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="hr-body">
+        
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+            <h1>Looking for something specific?</h1>
+        </div>    
+        
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+            <p>Search our whole stock below!</p>
+        </div>
+        
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+            <input type="search" id="searchInput" placeholder="Search your auto...">
+        </div>
+        
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+            <ol id="carList" class="hidden"></ol>
+        </div>
+        
+        <br><br><br>
+
+        <!--<hr class="hr-body">-->
+
+        <div class="container mt-4">
+
+            <h1 class="mb-4">View our whole Stock</h1>
+            
+            <div class="row">
+    
+                <!-- McLaren 720s -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/mclaren720s.webp" class="card-img-top" alt="McLaren 720s">
+                        <div class="card-body">
+                            <h5 class="card-title">McLaren 720s</h5>
+                            <p class="card-text">A high-performance supercar from McLaren known for its striking design, advanced aerodynamics, and impressive acceleration.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Rolls-Royce Wraith -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/rollsroycewraith.jpg" class="card-img-top" alt="Rolls Royce Wraith">
+                        <div class="card-body">
+                            <h5 class="card-title">Rolls-Royce Wraith</h5>
+                            <p class="card-text">An ultra-luxurious coupe from Rolls-Royce, known for its opulent interior and smooth ride.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- BMW 850i -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/bmw850i.png" class="card-img-top" alt="BMW 850i">
+                        <div class="card-body">
+                            <h5 class="card-title">BMW 850i</h5>
+                            <p class="card-text">A luxurious coupe or convertible offering a blend of style, comfort, and performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Ferrari Portofino -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/ferrariportofino.jpg" class="card-img-top" alt="ferrari Portofino">
+                        <div class="card-body">
+                            <h5 class="card-title">Ferrari Portofino</h5>
+                            <p class="card-text">A convertible sports car with a retractable hardtop, delivering Ferrari's signature performance.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Bentley Continental GT -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/bentleycontinentalgt.jpg" class="card-img-top" alt="Bentley Continental GT">
+                        <div class="card-body">
+                            <h5 class="card-title">Bentley Continental GT</h5>
+                            <p class="card-text">A grand tourer that combines luxury with high-performance capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Lexus LC 500 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/lexuslc500.jpg" class="card-img-top" alt="Lexus LC 500">
+                        <div class="card-body">
+                            <h5 class="card-title">Lexus LC 500</h5>
+                            <p class="card-text">A luxury coupe with a unique design, a comfortable interior, and a powerful V8 engine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+    
+                <!-- Aston Martin Vantage -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/astonmartinvantage.avif" class="card-img-top" alt="Aston Martin Vantage">
+                        <div class="card-body">
+                            <h5 class="card-title">Aston Martin Vantage</h5>
+                            <p class="card-text">A beautiful and powerful sports car from the renowned British luxury brand.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Maserati Ghibli -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/maseratighibli.webp" class="card-img-top" alt="Maserati Ghibli">
+                        <div class="card-body">
+                            <h5 class="card-title">Maserati Ghibli</h5>
+                            <p class="card-text">A luxury sedan with Italian flair, offering a blend of performance and elegance.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Jaguar F-Type -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/jaguarFtypeP300.webp" class="card-img-top" alt="Jaguar F-Type">
+                        <div class="card-body">
+                            <h5 class="card-title">Jaguar F-Type</h5>
+                            <p class="card-text">A stylish and powerful sports car with a distinctive design and potent engine options.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+    
+                <!-- Tesla Model S Plaid -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/teslamodels.webp" class="card-img-top" alt="Tesla Model S Plaid">
+                        <div class="card-body">
+                            <h5 class="card-title">Tesla Model S Plaid                            </h5>
+                            <p class="card-text">An electric sedan with impressive acceleration and cutting-edge technology.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Audi R8 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/audir8.webp" class="card-img-top" alt="Audi R8">
+                        <div class="card-body">
+                            <h5 class="card-title">Audi R8</h5>
+                            <p class="card-text">A high-performance sports car with a sleek design and advanced Quattro all-wheel drive.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Porsche 911 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./pictures/prosche911gt3r.jpg" class="card-img-top" alt="Porsche 911">
+                        <div class="card-body">
+                            <h5 class="card-title">Porsche 911</h5>
+                            <p class="card-text">An iconic sports car known for its performance, handling, and timeless design.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+        <hr class="hr-body">
+        
+        <div class="leasing-form-container mt-5 mb-5">
+            <h2 class="leasing-form-text mb-4">Try Out Our Exclusive 0% Interest Leasing Offers</h2>
+            <p class="leasing-form-text"> 
+                At Horizon Autos, we are thrilled to introduce our exclusive 0% leasing offers, designed to make your dream car more affordable than ever. Take advantage of this unprecedented opportunity to drive home your favorite luxury vehicle with no interest on your leasing plan. <br>
+                Our commitment to providing exceptional value means you can enjoy the thrill of driving a high-performance car without the additional cost of interest. Whether you're interested in a sleek sports car, a luxurious sedan, or a powerful SUV, our 0% leasing options put you in the driver's seat with unparalleled savings. <br>            
+                Experience the freedom of driving a top-tier vehicle with budget-friendly monthly payments. Explore our extensive stock and discover the perfect car for you. Don't miss out on this limited-time opportunity to elevate your driving experience at 0% interest. <br>
+            </p>
+    
+            <form style="margin-top: 5%;">
+                <legend class="leasing-form-legend">Leasing Calculator</legend>
+                <label for="carPrice" class="leasing-form-label">Car Price: $</label>
+                <input type="number" id="carPrice" class="leasing-form-input" required>
+                <br>          
+                <label for="months" class="leasing-form-label">Number of Months: </label>
+                <select id="months" class="leasing-form-select" required>
+                    <option value="12">12 months</option>
+                    <option value="24">24 months</option>
+                    <option value="36">36 months</option>
+                    <option value="48">48 months</option>
+                </select>
+                <br>          
+                <button type="button" onclick="calculateLeasing()" class="leasing-form-button">Calculate</button>          
+                <div id="result" class="leasing-form-result"></div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="background-black">
+        <br><br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-3">
+                            <ul style="list-style-type: square;">
+                                <li><a class="nav-link font-weight-bold align-middle" href="./Home.html">HOME</a></li>
+                                <li><a class="nav-link font-weight-bold align-middle" href="./CARS.html">STOCK</a></li>
+                                <li><a class="nav-link font-weight-bold align-middle" href="./Workers.html">STAFF</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <ul>
+                                <li><a class="nav-link font-weight-bold align-middle" href="./FAQ.html">FAQ</a></li>
+                                <li><a class="nav-link font-weight-bold align-middle" href="./AboutUs.html">ABOUT</a></li>
+                                <li><a class="nav-link font-weight-bold align-middle" href="./Contact.html">CONTACT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-6">
+                    <h1>Contact us</h1>
+                    <ul style="list-style-type: square;">
+                        <li><a href="tel:+38344123465">Call Us: +383 (0) 44 123-456</a></li>
+                        <li><a href="mailto:projekti@web.com">Email Us: projekti@web.com</a></li>
+                        <li><a href="https://www.google.com/maps/place/Fakulteti+Teknik/@42.6487697,21.1667975,19z/data=!4m6!3m5!1s0x13549ec1b6ecb2c1:0x7f0893730efce187!8m2!3d42.6487907!4d21.1671507!16s%2Fm%2F0j63ycv?entry=ttu" target="_blank"><address>Bregu i Diellit p.n 10000, Pristina, Kosova</address></a></li>
+                    </ul>   
+                </div>
+            </div>
+            
+            <hr class="hr-footer">
+            
+            <div class="row align-items-center">
+                <div class="col-6"><a href="./pictures/copyright-kosova.odt"><abbr title="Horizon Autos" style="text-decoration: none;">&copy; HA 2023</abbr></a></div>
+                <div class="col-6">Follow us:
+                    <a href="https://www.facebook.com/fiek.edu" target="_blank" class="overwrite"><img src="./pictures/facebook.png" alt="Facebook Icon" width="40" height="40" style="margin-right: 10px;"></a>
+                    <a href="https://www.instagram.com/ks.fiek/" target="_blank" class="overwrite"><img src="./pictures/insta1.png" alt="Instagram Icon" width="40" height="40"></a>
+            </div>
+        </div>    
+    </footer>
+    <!-- Java Scriptat -->
+    <script>
+        function calculateLeasing() {
+            // Get input values
+            const carPrice = parseFloat(document.getElementById("carPrice").value);
+            const months = parseInt(document.getElementById("months").value);
+      
+            // Validate inputs
+            if (isNaN(carPrice) || isNaN(months) || carPrice <= 0 || months <= 0) {
+                alert("Please enter valid numbers for Car Price and Number of Months.");
+                return;
+            }
+      
+            // Calculate downpayment (20% of the car price)
+            const downpayment = 0.2 * carPrice;
+      
+            // Calculate monthly payment (rest of the price evenly distributed among the months)
+            const monthlyPayment = (carPrice - downpayment) / months;
+      
+            // Display the result
+            const resultElement = document.getElementById("result");
+            resultElement.innerHTML = `
+                <h3>Leasing Summary</h3>
+                <p>Downpayment: $${downpayment.toFixed(2)}</p>
+                <p>Monthly Payment: $${monthlyPayment.toFixed(2)}</p>
+            `;
+        }
+    </script>
+    <script>
+        function scrollToTopAndPlayAudio() {
+            playAudio();
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        function playAudio() {        
+            var audio = new Audio('./pictures/whoosh.mp3');
+            if (audio.canPlayType && audio.canPlayType('audio/mpeg')) { audio.play(); }
+        }
+    </script>
+    <!-- dragNdrop-->
+    <script>
+      // Make cards sortable
+      $(document).ready(function() {
+        $('.sortable-card-deck').sortable({
+          items: '.card',
+          cursor: 'move',
+          revert: true,
+          axis: 'y', // Allow sorting only in the vertical direction
+          containment: '.sortable-card-deck', // Contain the sorting within the card deck
+          tolerance: 'pointer', // Change cursor to pointer when dragging
+          placeholder: 'sortable-placeholder', // Custom placeholder class
+          start: function(event, ui) {
+            ui.item.addClass('sortable-dragging');
+          },
+          stop: function(event, ui) {
+            ui.item.removeClass('sortable-dragging');
+          }
+        });
+      });
+    </script>
+     <script src="./search.js"></script>
+    <!-- drangNdrop end-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

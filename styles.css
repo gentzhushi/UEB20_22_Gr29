@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('./pictures/repeat-image-reviews.jpg'); /* Replace with the actual path to your image */
+    background-repeat: repeat; /* or 'repeat-x' for horizontal repeat, 'repeat-y' for vertical repeat */
+    background-size: 30%; /* Adjust as needed, 'cover' will make sure the image covers the entire body */
+    background-origin: content-box; /* Specify the background positioning area *//
+}
+
+* {
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.background-black{
+    background-color: black;
+    color:whitesmoke;
+}   
+
+.text-bold {
+    font-weight: bold;
+}
+
+hr.hr-footer {
+    border: 0.1px solid rgb(52, 52, 52);
+    border-radius: 5px;
+}
+
+
+
+hr.hr-body {
+    margin: 5%;
+    border: 0.1px solid rgb(212, 212, 212);
+    border-radius: 5px;
+}
+
+.footeri-anash {
+    display: inline-block;
+    width: 48%; /* Adjust the width as needed */
+    margin-right: 2%; /* Add some margin between the divs */
+}
+
+a {
+    color: white !important;
+    text-decoration: none !important; /* Remove underline */
+}
+
+/* Styling for visited links */
+a:visited {
+    color: white !important;
+    text-decoration: none !important;
+}
+a:hover{
+    color: orange !important;
+    text-decoration: underline !important;
+}
+
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+button {
+    background: linear-gradient(to right, #FFD700, #FFA500);; /* Transparent background */
+    color: white; /* Yellow text */
+    padding: 10px 20px;
+    border: none; /* Yellow border */
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 10px; /* Add some spacing between buttons */
+}
+
+button:hover{
+    background-color: #ffc107; /* Yellow background on hover */
+    color: #fff; /* White text on hover */
+    border-color: #fff; /* White border on hover */
+}
+
+
+
+#rating {
+    display: flex; 
+}
+
+
+#rating input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid orange;
+    outline: none;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#rating input[type="radio"]:checked {
+    background: radial-gradient(circle, #FFD700, #FFA500);;
+}
+.radio-container {
+    margin-bottom: 10px; 
+}   
+.showcos{
+    text-align:right;
+}
