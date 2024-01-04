@@ -108,7 +108,7 @@ button:hover{
 }
 
 #rating input[type="radio"]:checked {
-    background: radial-gradient(circle, #FFD700, #FFA500);;
+    background: radial-gradient(circle, #FFD700, #FFA500);
 }
 .radio-container {
     margin-bottom: 10px; 
