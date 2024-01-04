@@ -2,39 +2,109 @@
 <html>
 <head>
     <style>
-        .box {
-            border: 1px solid black;
-            width: 300px;
-            height: 300px;
+        .draggable {
+            width: fit-content;
+            height: fit-content;
+            margin: 10px;
+            border: none;
+            justify-content: center;
+            text-align: center;
+            border-radius: 5px;
+            text-wrap:pretty;
         }
-        #box2 {
-            border-color: red;
+
+        img {
+          width: 80px;
+          height: auto;
         }
+        span{
+          font-weight: bold;
+        }
+        .draggable p{
+          margin-top: 10px;
+        }
+
+
     </style>
+    <link rel="stylesheet" href="./external.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   
 </head>
 <body>
-    <div id="captcha">
-        <div class="box" id="box1"></div>
-        <div class="box" id="box2"></div>
-        <div class="box" id="box3"></div>
-        <!-- Add more boxes as needed -->
+  <div class="kontinjeri" style="display: flex;">
+
+    <div id="div1" class="draggable" draggable="true">
+      <img src="./pictures/chat.png" alt=""> <br><span>Quality Reviews</span> <br><p>Around 95% of our reviews online are very pozitive!</p>
     </div>
-    <img id="draggableImage" src="./pictures/Arleona.jpg" draggable="true">
+
+    <div id="div2" class="draggable" draggable="true">
+      <img src="./pictures/handshake.png" alt=""> <br><span>Trusted Dealership</span> <br><p>All our customers leave with a negotiation process and deal that satisfies them!</p>
+    </div>
+
+    <div id="div3" class="draggable" draggable="true">
+      <img src="./pictures/electric-car.png" alt=""> <br><span>Excellcent Cars</span> <br><p>Our company offers cars from all the best global brands, at a premium price!</p>
+    </div>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
 
     <script>
-        document.getElementById('draggableImage').addEventListener('dragstart', function (event) {
-            event.dataTransfer.setData('text/plain', 'draggableImage');
-        });
+        var dragged;
 
-        document.getElementById('box2').addEventListener('dragover', function (event) {
-            event.preventDefault();
-        });
+        /* events fired on the draggable target */
+        document.addEventListener("drag", function(event) {}, false);
 
-        document.getElementById('box2').addEventListener('drop', function (event) {
+        document.addEventListener("dragstart", function(event) {
+            // store a reference to the dragged element and the next sibling
+            dragged = event.target;
+        }, false);
+
+        document.addEventListener("dragend", function(event) {
+            // reset the transparency
+            event.target.style.opacity = "";
+        }, false);
+
+        /* events fired on the drop targets */
+        document.addEventListener("dragover", function(event) {
+            // prevent default to allow drop
             event.preventDefault();
-            var data = event.dataTransfer.getData('text');
-            event.target.appendChild(document.getElementById(data));
-        });
+        }, false);
+
+        document.addEventListener("dragenter", function(event) {
+            // highlight potential drop target when the draggable element enters it
+            if (event.target.className == "draggable") {
+                event.target.style.background = "purple";
+            }
+        }, false);
+
+        document.addEventListener("dragleave", function(event) {
+            // reset background of potential drop target when the draggable element leaves it
+            if (event.target.className == "draggable") {
+                event.target.style.background = "";
+            }
+        }, false);
+
+        document.addEventListener("drop", function(event) {
+            // prevent default action (open as link for some elements)
+            event.preventDefault();
+            // move dragged elem to the selected drop target
+            if (event.target.className == "draggable") {
+                event.target.style.background = "";
+                dragged.parentNode.removeChild(dragged);
+                event.target.parentNode.insertBefore(dragged, event.target);
+            }
+        }, false);
     </script>
 </body>
 </html>
