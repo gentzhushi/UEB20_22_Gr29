@@ -167,6 +167,16 @@ input[type="submit"]:hover{
     overflow: hidden; /* Clearing the float */
 }
 
+.container-search {
+    max-width: 600px; /* Increased max-width for better visibility */
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden; /* Clearing the float */
+}
+
 .header-test_drive {
     color: #333;
 }
@@ -200,9 +210,7 @@ input[type="submit"]:hover{
 
 .image-test_drive {
     float: left;
-    width: calc(54.3% - 20px); /* Adjusted width to match the form width */
-    max-width: 100%; /* Ensure image does not exceed its container */
-    border-radius: 8px;
+    border-radius: 22px;
     margin-right: 3%;
 }
 

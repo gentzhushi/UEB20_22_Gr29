@@ -152,9 +152,11 @@
 
     <!-- Formi per Test Drive -->
     <div class="container mt-4">
-        <img class="image-test_drive" src="./pictures/test-drive.jpg" alt="Car Image">
+        
+        <img class="image-test_drive col-md-7" src="./pictures/test-drive.jpg" alt="Car Image">
         <h2 class="header-test_drive">Schedule a Test Drive</h2>
         <p>Fill out the form below to schedule a test drive.</p>
+
         <div class="container1-test_drive">
             <form class="form-test_drive" action="#" method="post">
                 <label class="form-label-test_drive" for="name">Full Name:</label>
@@ -168,7 +170,12 @@
 
                 <label class="form-label-test_drive" for="preferred-date">Preferred Date:</label>
                 <input class="form-input-test_drive" type="date" id="preferred-date" name="preferred-date" required>
-
+                
+                <div class="container-fluid ml-5 mb-2">
+                    <input type="checkbox" class="form-check-input" id="exampleCheckbox">
+                    <label class="form-check-label" for="exampleCheckbox ml-5">I agree to the Terms & Conditions</label>
+                </div>
+                
                 <input class="form-input-test_drive" type="submit" value="Schedule Test Drive">
             </form>
         </div>
