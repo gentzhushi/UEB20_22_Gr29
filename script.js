@@ -21,7 +21,7 @@ function displayReviews() {
             reviewElement.innerHTML = `
                 <h3>${review.dealerName}</h3>
                 <p>Rating: ${review.rating} Stars</p>
-                <p>${review.userReview}</p>
+                <p>${filterProfanity(review.userReview)}</p>
             `;
             reviewsSection.appendChild(reviewElement);
         });
@@ -49,6 +49,17 @@ function displayCalculations() {
         averageElement.textContent = `Average Rating: ${averageRating.toFixed(1)} Stars`;
         starCountsElement.textContent = `5 Stars: ${starCounts[4]} | 4 Stars: ${starCounts[3]} | 3 Stars: ${starCounts[2]} | 2 Stars: ${starCounts[1]} | 1 Star: ${starCounts[0]}`;
     }
+}
+
+function filterProfanity(text) {
+    const profanityWords = ['fuck', 'shit', 'bitch', 'cunt'];
+
+    for (const profanity of profanityWords) {
+        const regex = new RegExp(`\\b${profanity}\\b`, 'gi');
+        text = text.replace(regex, '*'.repeat(profanity.length));
+    }
+
+    return text;
 }
 $(document).ready(function() {
     $("#show-reviews").click(function() {
