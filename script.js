@@ -56,7 +56,6 @@ function submitReview() {
     const ratingElements = document.getElementsByName('rating');
     let selectedRating;
 
-    
     for (const element of ratingElements) {
         if (element.checked) {
             selectedRating = element.value;
@@ -72,24 +71,21 @@ function submitReview() {
         return;
     }
 
-   
-    const newReview = new Review(dealerName, selectedRating, userReview);
+    // Simulate a delay with setTimeout (e.g., 1000 milliseconds or 1 second)
+    setTimeout(() => {
+        const newReview = new Review(dealerName, selectedRating, userReview);
 
-   
-    reviews.push(newReview);
+        reviews.push(newReview);
 
-  
-    displayReviews();
+        displayReviews();
+        displayCalculations();
 
-    
-    displayCalculations();
-
-    
-    document.getElementById('dealer-name').value = '';
-    document.querySelector('input[name="rating"]:checked').checked = false;
-    document.getElementById('review').value = '';
+        // Clear input fields
+        document.getElementById('dealer-name').value = '';
+        document.querySelector('input[name="rating"]:checked').checked = false;
+        document.getElementById('review').value = '';
+    }, 1000); // 1000 milliseconds = 1 second
 }
-
 
 displayReviews();
 displayCalculations();
