@@ -93,16 +93,16 @@ input[type="radio"] {
     -moz-appearance: none;
     appearance: none;
     border-radius: 50%;
-    width: 20px; /* Adjust the size of the circle */
-    height: 20px; /* Adjust the size of the circle */
-    border: 2px solid orange; /* Set the color of the outer circle to orange */
+    width: 20px; 
+    height: 20px; 
+    border: 2px solid orange; 
     outline: none;
-    margin-right: 5px; /* Adjust the spacing between the radio button and text */
+    margin-right: 5px; 
 }
 
-/* Change the color of the inner circle when the radio button is checked */
+
 input[type="radio"]:checked {
-    background-color: orange; /* Set the color of the inner circle when the radio button is checked */
+    background-color: orange; 
 }
 .showcos{
     text-align:right;
