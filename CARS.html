@@ -402,10 +402,11 @@
     try {
         // Get input values
         const carPrice = parseFloat(document.getElementById("carPrice").value);
+        const months = parseInt(document.getElementById("months").value);
 
         // Check if any input is negative, and throw an error if true
-        if (isNaN(carPrice) || carPrice <= 0) {
-            throw new Error("Please enter a positive value of car price!");
+        if (isNaN(carPrice) || isNaN(months) || carPrice <= 0 || months <= 0) {
+            throw new Error("Please enter a positive sum of money!");
         }
 
         // Calculate downpayment (20% of the car price)
