@@ -267,11 +267,11 @@
             element.style.color = textColor;
         }
         function submitForm() {
-        var email = document.getElementById('inputEmail').value;
-        var questions = document.getElementById('inputQuestions').value;
-
+            var email = document.getElementById('inputEmail').value;
+            var questions = document.getElementById('inputQuestions').value;
         // Basic email validation
         if (validateEmail(email)) {
+            playAudio1();
             document.getElementById('questionsForm').submit();  
         } else {
             alert('Invalid email address. Please enter a valid email.');
