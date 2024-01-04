@@ -108,6 +108,27 @@
         .car-logo:hover::before {
             transform: scaleX(1); 
         }
+        .video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal-sized columns */
+    grid-gap: 30px; /* Adjust the gap between videos as needed */
+    max-width: 800px; /* Set a maximum width for the grid */
+    margin: 20px auto;
+}
+
+.video-item {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+}
+
+.video-item iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
     </style>
 </head>
@@ -191,6 +212,8 @@
         </a>
     </div>
 
+    
+
     <div class="container mt-5">
         <h2 class="text-center mb-4">Our Story</h2>
         <div class="story-section">
@@ -202,6 +225,15 @@
         </div>
     </div>
     
+    <div class="video-grid mt-5 mb-5">
+        <div class="video-item" >
+            <iframe src="./pictures/A BMW Dealership Commercial.mp4" width="125%" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <iframe src="./pictures/Business footage diverse team _ Footage in office, meeting room _ Free download stock footage.mp4" width="125%" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
     <div class="container mt-5">
         <h2 class="text-center mb-4" style="margin-bottom: 30px;">Benefits of Working with Us</h2>
         <div class="row">
