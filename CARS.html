@@ -402,26 +402,25 @@
     </script>
     <!-- dragNdrop-->
     <script>
-        // Make rows sortable
-        $(document).ready(function() {
-          $('.sortable-row').sortable({
-            items: '> div',
-            cursor: 'move',
-            revert: true,
-            axis: 'y', // Allow sorting only in the vertical direction
-            containment: '.sortable-row', // Contain the sorting within the row
-            tolerance: 'pointer', // Change cursor to pointer when dragging
-            placeholder: 'sortable-placeholder', // Custom placeholder class
-            start: function(event, ui) {
-              ui.item.addClass('sortable-dragging');
-            },
-            stop: function(event, ui) {
-              ui.item.removeClass('sortable-dragging');
-            }
-          });
+      // Make cards sortable
+      $(document).ready(function() {
+        $('.sortable-card-deck').sortable({
+          items: '.card',
+          cursor: 'move',
+          revert: true,
+          axis: 'y', // Allow sorting only in the vertical direction
+          containment: '.sortable-card-deck', // Contain the sorting within the card deck
+          tolerance: 'pointer', // Change cursor to pointer when dragging
+          placeholder: 'sortable-placeholder', // Custom placeholder class
+          start: function(event, ui) {
+            ui.item.addClass('sortable-dragging');
+          },
+          stop: function(event, ui) {
+            ui.item.removeClass('sortable-dragging');
+          }
         });
-      </script>
-  
+      });
+    </script> 
     <!-- drangNdrop end-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
