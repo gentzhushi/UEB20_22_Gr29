@@ -321,3 +321,11 @@ body {
     background-color: #555;
     width: 12px;
   }
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0;
+    
+  }

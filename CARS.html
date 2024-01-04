@@ -28,6 +28,22 @@
             background-color: white;
             color: orange;
         }
+        #searchInput {
+        width: 300px; /* Adjust the width as needed */
+        height: 40px; /* Adjust the height as needed */
+        font-size: 16px; /* Adjust the font size as needed */
+        border: 2px solid orange;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 0;
+        box-sizing: border-box;
+        }
+
+        #carList {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 10px; /* Adjust the margin as needed */
+        }
     </style>
     
 </head>
@@ -139,7 +155,13 @@
         </div>
 
         <hr class="hr-body">
-        
+        <div>
+        <input type="search" id="searchInput" placeholder="Kërko veturat...">
+        <ol id="carList" class="hidden" style="padding-left: 0%;"></ol>
+        </div>
+
+        <hr class="hr-body">
+
         <div class="container mt-4">
 
             <h1 class="mb-4">Stock</h1>
@@ -419,8 +441,14 @@
             ui.item.removeClass('sortable-dragging');
           }
         });
+<<<<<<< Updated upstream
       });
     </script> 
+=======
+      </script>
+      <script src="search.js"></script>
+  
+>>>>>>> Stashed changes
     <!-- drangNdrop end-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
