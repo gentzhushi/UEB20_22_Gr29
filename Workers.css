@@ -80,6 +80,6 @@ border-radius: 5px;
     margin: 200px;
     margin-top: 20px;
 }
-.hoveri:hover{
-    color: black;
+a.hoveri:hover{
+    color: white !important;
 }
