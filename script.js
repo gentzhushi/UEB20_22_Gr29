@@ -50,13 +50,25 @@ function displayCalculations() {
         starCountsElement.textContent = `5 Stars: ${starCounts[4]} | 4 Stars: ${starCounts[3]} | 3 Stars: ${starCounts[2]} | 2 Stars: ${starCounts[1]} | 1 Star: ${starCounts[0]}`;
     }
 }
+$(document).ready(function() {
+    $("#show-reviews").click(function() {
+        $("#reviews").fadeIn(1000);
+        $("#show-reviews").hide();
+        $("#hide-reviews").show();
+    });
+
+    $("#hide-reviews").click(function() {
+        $("#reviews").fadeOut(1000);
+        $("#show-reviews").show();
+        $("#hide-reviews").hide();
+    });
+});
 
 function submitReview() {
     const dealerName = document.getElementById('dealer-name').value;
     const ratingElements = document.getElementsByName('rating');
     let selectedRating;
 
-    
     for (const element of ratingElements) {
         if (element.checked) {
             selectedRating = element.value;
@@ -72,24 +84,22 @@ function submitReview() {
         return;
     }
 
-   
-    const newReview = new Review(dealerName, selectedRating, userReview);
+    // Simulate a delay with setTimeout (e.g., 1000 milliseconds or 1 second)
+    setTimeout(() => {
+        const newReview = new Review(dealerName, selectedRating, userReview);
 
-   
-    reviews.push(newReview);
+        reviews.push(newReview);
 
-  
-    displayReviews();
+        displayReviews();
+        displayCalculations();
 
-    
-    displayCalculations();
-
-    
-    document.getElementById('dealer-name').value = '';
-    document.querySelector('input[name="rating"]:checked').checked = false;
-    document.getElementById('review').value = '';
+        // Clear input fields
+        document.getElementById('dealer-name').value = '';
+        document.querySelector('input[name="rating"]:checked').checked = false;
+        document.getElementById('review').value = '';
+    }, 1000); // 1000 milliseconds = 1 second
 }
-
 
 displayReviews();
 displayCalculations();
+
