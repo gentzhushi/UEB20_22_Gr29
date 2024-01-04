@@ -1,8 +1,9 @@
 class Review {
-    constructor(dealerName, rating, userReview) {
+    constructor(dealerName, rating, userReview, date) {
         this.dealerName = dealerName;
         this.rating = rating;
         this.userReview = userReview;
+        this.date = date;
     }
 }
 
@@ -22,6 +23,7 @@ function displayReviews() {
                 <h3>${review.dealerName}</h3>
                 <p>Rating: ${review.rating} Stars</p>
                 <p>${filterProfanity(review.userReview)}</p>
+                <p>Date: ${review.date}</p>
             `;
             reviewsSection.appendChild(reviewElement);
         });
@@ -61,14 +63,15 @@ function filterProfanity(text) {
 
     return text;
 }
-$(document).ready(function() {
-    $("#show-reviews").click(function() {
+
+$(document).ready(function () {
+    $("#show-reviews").click(function () {
         $("#reviews").fadeIn(1000);
         $("#show-reviews").hide();
         $("#hide-reviews").show();
     });
 
-    $("#hide-reviews").click(function() {
+    $("#hide-reviews").click(function () {
         $("#reviews").fadeOut(1000);
         $("#show-reviews").show();
         $("#hide-reviews").hide();
@@ -95,9 +98,13 @@ function submitReview() {
         return;
     }
 
+    // Capture the current date using moment.js
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleString();
+
     // Simulate a delay with setTimeout (e.g., 1000 milliseconds or 1 second)
     setTimeout(() => {
-        const newReview = new Review(dealerName, selectedRating, userReview);
+        const newReview = new Review(dealerName, selectedRating, userReview, formattedDate);
 
         reviews.push(newReview);
 
@@ -113,4 +120,3 @@ function submitReview() {
 
 displayReviews();
 displayCalculations();
-
