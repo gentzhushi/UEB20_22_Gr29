@@ -286,8 +286,8 @@ th, td {
     margin-right: calc(20%);
 }
 
-th {
-    background-color: #FF8C00; 
+thead {
+    background: radial-gradient(circle, #000, #FF0000);
     color: white; 
 }
 
