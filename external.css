@@ -47,7 +47,7 @@ a:hover{
 
 .image-container {
     background-position: center;
-    background-origin: content-box; /* Specify the background positioning area */
+    background-origin:content-box; /* Specify the background positioning area */
     width: 100%;
     height: 50%;
 }
