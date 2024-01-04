@@ -4,7 +4,8 @@ body {
     padding: 0;
     background-image: url('./pictures/repeat-image-reviews.jpg'); /* Replace with the actual path to your image */
     background-repeat: repeat; /* or 'repeat-x' for horizontal repeat, 'repeat-y' for vertical repeat */
-    background-size: 20%; /* Adjust as needed, 'cover' will make sure the image covers the entire body */
+    background-size: 30%; /* Adjust as needed, 'cover' will make sure the image covers the entire body */
+    background-origin: content-box; /* Specify the background positioning area *//
 }
 
 * {
