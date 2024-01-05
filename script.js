@@ -86,6 +86,10 @@ function validateRating(rating) {
     return !isNaN(rating) && parseInt(rating) >= 1 && parseInt(rating) <= 5;
 }
 
+function validateUserReview(userReview) {
+    return userReview.length > 0;
+}
+
 function submitReview() {
     const dealerName = document.getElementById('dealer-name').value;
     const ratingElements = document.getElementsByName('rating');
