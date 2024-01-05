@@ -18,57 +18,18 @@ const searchInput = document.getElementById('searchInput');
 const carList = document.getElementById('carList');
 
 function displayCars(carsToShow) {
-carList.innerHTML = '';
-carsToShow.map(car => {
-  const { brand, model, year, price } = car;
-  const li = document.createElement('li');
-  li.textContent = `${brand} ${model} - Year: ${year} - Price: ${price}`;
-  carList.appendChild(li);
-});
-}
-
-function filterCars(searchTerm) {
-const filteredCars = cars.reduce((filtered, car) => {
-  const { brand, model } = car;
-  const lowerBrand = brand.toLowerCase();
-  const lowerModel = model.toLowerCase();
-  const lowerSearchTerm = searchTerm.toLowerCase();
-
-  if (lowerBrand.includes(lowerSearchTerm) || lowerModel.includes(lowerSearchTerm)) {
-    filtered.push(car);
-  }
-
-  return filtered;
-}, []);
-displayCars(filteredCars);
-
-carList.classList.remove('hidden');
-}
-
-searchInput.addEventListener('input', function (event) {
-const searchTerm = event.target.value;
-
-if (searchTerm.trim().length === 0) {
-  carList.innerHTML = '';
-  carList.classList.add('hidden');
-} else {
-  filterCars(searchTerm);
-}
-});
-// Kod JavaScript (ndryshimi i vogël në displayCars)
-function displayCars(carsToShow) {
   carList.innerHTML = '';
   carsToShow.forEach(car => {
     const { brand, model, year, price } = car;
     const li = document.createElement('li');
     li.textContent = `${brand} ${model}`;
-    
+
     const descriptionList = document.createElement('ul');
-    
+
     const yearListItem = document.createElement('li');
     yearListItem.textContent = `Year: ${year}`;
     descriptionList.appendChild(yearListItem);
-    
+
     const priceListItem = document.createElement('li');
     priceListItem.textContent = `Price: $${price}`;
     descriptionList.appendChild(priceListItem);
@@ -77,3 +38,42 @@ function displayCars(carsToShow) {
     carList.appendChild(li);
   });
 }
+
+function validateSearchTerm(searchTerm) {
+  return searchTerm.trim().length >= 1;
+}
+
+function filterCars(searchTerm) {
+  if (!validateSearchTerm(searchTerm)) {
+    carList.innerHTML = '';
+    carList.classList.add('hidden');
+    return;
+  }
+
+  const filteredCars = cars.reduce((filtered, car) => {
+    const { brand, model } = car;
+    const lowerBrand = brand.toLowerCase();
+    const lowerModel = model.toLowerCase();
+    const lowerSearchTerm = searchTerm.toLowerCase();
+
+    if (lowerBrand.includes(lowerSearchTerm) || lowerModel.includes(lowerSearchTerm)) {
+      filtered.push(car);
+    }
+
+    return filtered;
+  }, []);
+  displayCars(filteredCars);
+
+  carList.classList.remove('hidden');
+}
+
+searchInput.addEventListener('input', function (event) {
+  const searchTerm = event.target.value;
+
+  if (searchTerm.trim().length === 0) {
+    carList.innerHTML = '';
+    carList.classList.add('hidden');
+  } else {
+    filterCars(searchTerm);
+  }
+});
