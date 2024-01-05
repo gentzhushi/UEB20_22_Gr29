@@ -54,7 +54,7 @@ function displayCalculations() {
 }
 
 function filterProfanity(text) {
-    const profanityWords = ['fuck', 'shit', 'bitch', 'cunt'];
+    const profanityWords = ['fuck', 'shit', 'bitch', 'cunt','profanitet'];
 
     for (const profanity of profanityWords) {
         const regex = new RegExp(`\\b${profanity}\\b`, 'gi');
