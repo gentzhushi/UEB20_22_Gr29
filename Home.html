@@ -366,7 +366,33 @@ document.addEventListener("drop", function(event) {
         dragged.parentNode.removeChild(dragged);
         event.target.parentNode.insertBefore(dragged, event.target);
     }
-}, false);
+    }, false);
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.form-test_drive').addEventListener('submit', function (event) {
+            // Validate checkbox
+            if (!document.getElementById('exampleCheckbox').checked) {
+                alert('Please agree to the Terms & Conditions');
+                event.preventDefault();
+            }
+
+            // Validate date
+            var currentDate = new Date();
+            var selectedDate = new Date(document.getElementById('preferred-date').value);
+
+            if (selectedDate < currentDate) {
+                alert('Please select a valid date that is ahead of the current date');
+                event.preventDefault();
+            }
+
+            // Validate password
+            var password = document.getElementById('password').value;
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long');
+                event.preventDefault();
+            }
+        });
+    });
+            
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
