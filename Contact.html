@@ -173,6 +173,15 @@ input[type=submit]:hover {
               <input type="submit" id="submit" value="Submit">
             </div></form>
         </div>
+
+        <div class="container1 container1-test_drive mt-5">
+          <div class="text-center">
+              <div class="card-body">
+                  <p class="card-text">Say, want to review our services? Click on the "<strong>Review Us</strong>" button.</p>
+                  <button class="btn buton-portokalli-grad-linear" onclick="redirekto()">Review Us</button>
+              </div>
+          </div>
+        </div>
         <br><br><br><br>
       </main>
     <footer class="background-black">
@@ -283,7 +292,10 @@ submitButton.addEventListener("click", function(event) {
   }
 });
 
+function redirekto() {
+        window.location.href = './Review.html';
+    }
 
-        </script>
+</script>
 </body>
 </html>
