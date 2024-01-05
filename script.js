@@ -128,6 +128,12 @@ function submitReview() {
         document.querySelector('input[name="rating"]:checked').checked = false;
         document.getElementById('review').value = '';
     }, 1000); // 1000 milliseconds = 1 second
+    const review1 = new Review('Ag Hamiti', 5, 'Great service and friendly staff!', '1/2/2024, 7:20:57 PM');
+    const review2 = new Review('Euron Osmani', 4, 'Nice experience overall. Would recommend.', '1/3/2024, 3:16:39 PM');
+    const review3 = new Review('Gent Zhushi', 3, 'Average service. Could be better.', '1/4/2024, 11:05:22 PM');
+
+    // Adding the instances to the reviews array
+    reviews.push(review1, review2, review3);
 }
 displayReviews();
 displayCalculations();
