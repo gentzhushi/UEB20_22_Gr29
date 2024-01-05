@@ -267,16 +267,18 @@
             element.style.color = textColor;
         }
         function submitForm() {
-            var email = document.getElementById('inputEmail').value;
-            var questions = document.getElementById('inputQuestions').value;
+        var email = document.getElementById('inputEmail').value;
+        var questions = document.getElementById('inputQuestions').value;
+
         // Basic email validation
         if (validateEmail(email)) {
-            playAudio1();
-            document.getElementById('questionsForm').submit();  
+            playAudio1(function () {
+                document.getElementById('questionsForm').submit();
+        });
         } else {
             alert('Invalid email address. Please enter a valid email.');
         }
-    }
+        }
 
     // Function to validate email using a regular expression
     function validateEmail(email) {
@@ -289,9 +291,18 @@
             if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {audio.play();}
         }
 
-        function playAudio1() {
-            var audio = new Audio('./pictures/Ding - Sound Effect (HD).mp3');
-            if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {audio.play();}
+        function playAudio1(callback) {
+        var audio = new Audio('./pictures/Ding - Sound Effect (HD).mp3');
+
+        audio.addEventListener('ended', function () {
+        if (callback && typeof callback === 'function') {
+            callback();
+        }
+        });
+
+        if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {
+        audio.play();
+        }
         }
     </script>
 </body>
