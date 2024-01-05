@@ -1,76 +1,139 @@
-class Car {
-    constructor(brand, model, year, price) {
-      this.brand = brand;
-      this.model = model;
-      this.year = year;
-      this.price = price;
+class Review {
+    constructor(dealerName, rating, userReview, date) {
+        this.dealerName = dealerName;
+        this.rating = rating;
+        this.userReview = userReview;
+        this.date = date;
     }
-  }
-  
-  const cars = [
-    new Car('McLaren', '720s', 2021, 250000),
-    new Car('Rolls-Royce', 'Wraith', 2022, 320000),
-    new Car('BMW', '850i', 2023, 150000),
-    new Car('Ferrari', 'Portofino', 2021, 300000),
-    new Car('Bentley', 'Continental GT', 2022, 280000),
-    new Car('Lexus', 'LC 500', 2023, 120000),
-    new Car('Aston Martin', 'Vantage', 2021, 200000),
-    new Car('Maserati', 'Ghibli', 2022, 170000),
-    new Car('Jaguar', 'F-Type', 2023, 190000),
-    new Car('Tesla', 'Model S Plaid', 2021, 100000),
-    new Car('Audi', 'R8', 2022, 220000),
-    new Car('Porsche', '911', 2023, 240000),
-    // dhe potencialisht me shume makina
-  ];
-  
-  const searchInput = document.getElementById('searchInput');
-  const carList = document.getElementById('carList');
-  
-  function displayCars(carsToShow) {
-    carList.innerHTML = '';
-    carsToShow.forEach(car => {
-      const { brand, model, year, price } = car;
-      const li = document.createElement('li');
-      li.textContent = `${brand} ${model}`;
-  
-      const descriptionList = document.createElement('ul');
-  
-      const yearListItem = document.createElement('li');
-      yearListItem.textContent = `Year: ${year}`;
-      descriptionList.appendChild(yearListItem);
-  
-      const priceListItem = document.createElement('li');
-      priceListItem.textContent = `Price: $${price}`;
-      descriptionList.appendChild(priceListItem);
-  
-      li.appendChild(descriptionList);
-      carList.appendChild(li);
-    });
-  }
-  
-  function filterCars(searchTerm) {
-    const filteredCars = cars.filter(car => {
-      const { brand, model } = car;
-      const lowerBrand = brand.toLowerCase();
-      const lowerModel = model.toLowerCase();
-      const lowerSearchTerm = searchTerm.toLowerCase();
-  
-      return lowerBrand.includes(lowerSearchTerm) || lowerModel.includes(lowerSearchTerm);
-    });
-  
-    displayCars(filteredCars);
-  
-    carList.classList.remove('hidden');
-  }
-  
-  searchInput.addEventListener('input', function (event) {
-    const searchTerm = event.target.value;
-  
-    if (searchTerm.trim().length === 0) {
-      carList.innerHTML = '';
-      carList.classList.add('hidden');
+}
+
+let reviews = [];
+
+function displayReviews() {
+    const reviewsSection = document.getElementById('reviews');
+    reviewsSection.innerHTML = '';
+
+    if (reviews.length === 0) {
+        reviewsSection.innerHTML = '<p>No reviews yet. Be the first one!</p>';
     } else {
-      filterCars(searchTerm);
+        reviews.forEach(review => {
+            const reviewElement = document.createElement('div');
+            reviewElement.classList.add('review');
+            reviewElement.innerHTML = `
+                <h3>${review.dealerName}</h3>
+                <p>Rating: ${review.rating} Stars</p>
+                <p>${filterProfanity(review.userReview)}</p>
+                <p>Date: ${review.date}</p>
+            `;
+            reviewsSection.appendChild(reviewElement);
+        });
     }
-  });
-  
+}
+
+function displayCalculations() {
+    const averageElement = document.getElementById('average-rating');
+    const starCountsElement = document.getElementById('star-counts');
+
+    if (reviews.length === 0) {
+        averageElement.textContent = 'Average Rating: N/A';
+        starCountsElement.textContent = '5 Stars: 0 | 4 Stars: 0 | 3 Stars: 0 | 2 Stars: 0 | 1 Star: 0';
+    } else {
+        let totalRating = 0;
+        let starCounts = [0, 0, 0, 0, 0]; // 5 stars, 4 stars, 3 stars, 2 stars, 1 star
+
+        reviews.forEach(review => {
+            totalRating += parseInt(review.rating);
+            starCounts[parseInt(review.rating) - 1]++;
+        });
+
+        const averageRating = totalRating / reviews.length;
+
+        averageElement.textContent = `Average Rating: ${averageRating.toFixed(1)} Stars`;
+        starCountsElement.textContent = `5 Stars: ${starCounts[4]} | 4 Stars: ${starCounts[3]} | 3 Stars: ${starCounts[2]} | 2 Stars: ${starCounts[1]} | 1 Star: ${starCounts[0]}`;
+    }
+}
+
+function filterProfanity(text) {
+    const profanityWords = ['fuck', 'shit', 'bitch', 'cunt','profanitet'];
+
+    for (const profanity of profanityWords) {
+        const regex = new RegExp(`\\b${profanity}\\b`, 'gi');
+        text = text.replace(regex, '*'.repeat(profanity.length));
+    }
+
+    return text;
+}
+
+$(document).ready(function () {
+    $("#show-reviews").click(function () {
+        $("#reviews").fadeIn(1000);
+        $("#show-reviews").hide();
+        $("#hide-reviews").show();
+    });
+
+    $("#hide-reviews").click(function () {
+        $("#reviews").fadeOut(1000);
+        $("#show-reviews").show();
+        $("#hide-reviews").hide();
+    });
+});
+
+function validateDealerName(dealerName) {
+    return dealerName.length >= 2;
+}
+
+function validateRating(rating) {
+    return !isNaN(rating) && parseInt(rating) >= 1 && parseInt(rating) <= 5;
+}
+
+function validateUserReview(userReview) {
+    return userReview.length >= 0;
+}
+
+function submitReview() {
+    const dealerName = document.getElementById('dealer-name').value;
+    const ratingElements = document.getElementsByName('rating');
+    let selectedRating;
+
+    for (const element of ratingElements) {
+        if (element.checked) {
+            selectedRating = element.value;
+            break;
+        }
+    }
+
+    const userReview = document.getElementById('review').value;
+
+    // Validate inputs
+    if (!validateDealerName(dealerName) || !validateRating(selectedRating) || !validateUserReview(userReview)) {
+        alert('Please fill in all fields correctly.');
+        return;
+    }
+
+    // Capture the current date using moment.js
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleString();
+
+    // Simulate a delay with setTimeout (e.g., 1000 milliseconds or 1 second)
+    setTimeout(() => {
+        const newReview = new Review(dealerName, selectedRating, userReview, formattedDate);
+
+        reviews.push(newReview);
+
+        displayReviews();
+        displayCalculations();
+
+        // Clear input fields
+        document.getElementById('dealer-name').value = '';
+        document.querySelector('input[name="rating"]:checked').checked = false;
+        document.getElementById('review').value = '';
+    }, 1000); // 1000 milliseconds = 1 second
+    const review1 = new Review('Ag Hamiti', 5, 'Great service and friendly staff!', '1/2/2024, 7:20:57 PM');
+    const review2 = new Review('Euron Osmani', 4, 'Nice experience overall. Would recommend.', '1/3/2024, 3:16:39 PM');
+    const review3 = new Review('Gent Zhushi', 3, 'Average service. Could be better.', '1/4/2024, 11:05:22 PM');
+
+    // Adding the instances to the reviews array
+    reviews.push(review1, review2, review3);
+}
+displayReviews();
+displayCalculations();
