@@ -48,7 +48,7 @@ input[type=submit]:hover {
 }
 
 /* Add a background color and some padding around the form */
-.container {
+.container-form {
   border-radius: 5px;
   padding: 20px;
   max-width: 600px; /* Limit the width of the form */
@@ -57,7 +57,7 @@ input[type=submit]:hover {
 }
 
 /* Add some style to the form title */
-h1 {
+.stili {
   text-align: center; /* Align the text to the center */
   font-family: 'Roboto', sans-serif; /* Use a custom font */
   font-weight: 300; /* Use a lighter font weight */
@@ -92,7 +92,7 @@ h1 {
             <div class="row justify-content-center align-items-center vh-100">            
                 <nav class="navbar navbar-expand-lg align-items-center ml-5" style="width: 90%;"> 
                     <div class="container">                    
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="./Home.html">
                             <img src="./pictures/image.jpg" alt="Home" class="logo" width="200">
                         </a>                    
                         <div class="collapse navbar-collapse" id="navbarNav">
@@ -126,9 +126,9 @@ h1 {
     <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()"><span>Scroll To Top</span></a>
 
     <main>
-        <div class="container">
+        <div class="container-form">
           <form id="login" action="action_page.php">
-            <h1>Contact Us</h1>
+            <h1 class="stili">Contact Us</h1>
             <div id="register">
               <p>Do you want to register?</p>
               <input type="radio" id="yes" name="register" value="yes">
