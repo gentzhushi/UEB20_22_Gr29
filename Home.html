@@ -186,31 +186,28 @@
     <!-- Formi per Test Drive -->
     <div class="container mt-4">
         
-        <img class="image-test_drive col-md-7" src="./pictures/test-drive.jpg" alt="Car Image">
+        <img class="image-test_drive col-md-6" src="./pictures/test-drive.jpg" alt="Car Image">
         <h2 class="header-test_drive">Schedule a Test Drive</h2>
         <p>Fill out the form below to schedule a test drive.</p>
 
         <div class="container1-test_drive">
-            <form class="form-test_drive" action="#" method="post">
-                <label class="form-label-test_drive" for="name">Full Name:</label>
-                <input class="form-input-test_drive" type="text" id="name" name="name" required>
+            <form class="form-test_drive" action="#" method="post" onsubmit="return submitForm()">
+                <label class="form-label-test_drive" for="name">Your username:</label>
+                <input class="form-input-test_drive" type="text" id="username" name="username" required>
 
-                <label class="form-label-test_drive" for="email">Email:</label>
-                <input class="form-input-test_drive" type="email" id="email" name="email" required>
-
-                <label class="form-label-test_drive" for="phone">Phone Number:</label>
-                <input class="form-input-test_drive" type="tel" id="phone" name="phone" required>
+                <label class="form-label-test_drive" for="email">Your password:</label>
+                <input class="form-input-test_drive" type="password" id="password" name="password" required>
 
                 <label class="form-label-test_drive" for="preferred-date">Preferred Date:</label>
                 <input class="form-input-test_drive" type="date" id="preferred-date" name="preferred-date" required>
                 
-                <div class="container-fluid ml-5 mb-2">
+                <div class="container-fluid mb-2 text-center">
                     <input type="checkbox" class="form-check-input" id="exampleCheckbox">
                     <label class="form-check-label" for="exampleCheckbox ml-5">I agree to the Terms & Conditions</label>
                 </div>
                 
                 <input class="form-input-test_drive col-md-5 mx-auto d-flex justify-content-center" type="submit" value="Schedule Test Drive">
-            </form>
+            </form> 
         </div>
 
     </div>
@@ -241,16 +238,16 @@
     <div class="container1 container1-test_drive mb-5">
         <h2>Subscribe to Our Newsletter</h2>
         <p>Stay updated with the latest news and offers.</p>
-        <form action="#" method="post" onsubmit="return showConfirmation()">
+        <form action="#" method="post" onsubmit="return submitForm()">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <input class="form-input-test_drive col-md-5 mx-auto d-flex justify-content-center " type="submit" value="Subscribe">
+            <input type="email" id="email" name="email" style="border-radius: 25px; background-color: white;" required>
+            <input class="form-input-test_drive col-md-5 mx-auto d-flex justify-content-center " type="submit" value="Subscribe" onclick="showConfirmation()">
         </form>
     </div>
     <br><br>
+
     <!--Per buton bottom right-->
     <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()">Scroll To Top</a>
-
 
     <!--Footeri-->
     <footer class="background-black">
@@ -315,6 +312,7 @@
         }
     </script>
      <script>
+        
         function showConfirmation() {
             
             var confirmSubscribe = confirm("You will be informed with every email we send to our customers, sure you want to continue?");
@@ -369,7 +367,39 @@ document.addEventListener("drop", function(event) {
         dragged.parentNode.removeChild(dragged);
         event.target.parentNode.insertBefore(dragged, event.target);
     }
-}, false);
+    }, false);
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.form-test_drive').addEventListener('submit', function (event) {
+            // Validate checkbox
+            if (!document.getElementById('exampleCheckbox').checked) {
+                alert('Please agree to the Terms & Conditions');
+                event.preventDefault();
+            }
+
+            // Validate date
+            var currentDate = new Date();
+            var selectedDate = new Date(document.getElementById('preferred-date').value);
+
+            if (selectedDate < currentDate) {
+                alert('Please select a valid date that is ahead of the current date');
+                event.preventDefault();
+            }
+
+            // Validate password
+            var password = document.getElementById('password').value;
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long');
+                event.preventDefault();
+            }
+        });
+    });
+    function submitForm() {
+            
+            window.location.href = window.location.href;
+
+            
+            return false;
+        }
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

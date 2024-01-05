@@ -174,13 +174,13 @@
                 </div>
             </div>
         </div>
-
+    
         <br>
-        
+            
         <div class="row mt-5">
             <div class="col-md-6 offset-md-3">
                 <h3 class="text-center mb-4">Have more questions?</h3>
-                <form id="questionsForm">
+                <form id="questionsForm" onsubmit="return submitForm()">
                     <div class="form-group">
                         <label for="inputEmail">Your Email:</label>
                         <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
@@ -189,7 +189,7 @@
                         <label for="inputQuestions">Your Questions:</label>
                         <textarea class="form-control" id="inputQuestions" rows="3" placeholder="Type your questions here"></textarea>
                     </div>
-                    <button type="button" class="btn buton-portokalli-grad-linear d-flex mx-auto col-3 justify-content-center" onclick="submitForm()">Submit</button>
+                    <button type="button" class="btn buton-portokalli-grad-linear d-flex mx-auto col-3 justify-content-center" onclick="submitForm1()">Submit</button>
                 </form>
             </div>
         </div>
@@ -266,17 +266,19 @@
             element.style.backgroundColor = bgColor;
             element.style.color = textColor;
         }
-        function submitForm() {
+        function submitForm1() {
         var email = document.getElementById('inputEmail').value;
         var questions = document.getElementById('inputQuestions').value;
 
         // Basic email validation
         if (validateEmail(email)) {
-            document.getElementById('questionsForm').submit();  
+            playAudio1(function () {
+                document.getElementById('questionsForm').submit();
+        });
         } else {
             alert('Invalid email address. Please enter a valid email.');
         }
-    }
+        }
 
     // Function to validate email using a regular expression
     function validateEmail(email) {
@@ -289,9 +291,26 @@
             if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {audio.play();}
         }
 
-        function playAudio1() {
-            var audio = new Audio('./pictures/Ding - Sound Effect (HD).mp3');
-            if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {audio.play();}
+        function playAudio1(callback) {
+        var audio = new Audio('./pictures/Ding - Sound Effect (HD).mp3');
+
+        audio.addEventListener('ended', function () {
+        if (callback && typeof callback === 'function') {
+            callback();
+        }
+        });
+
+        if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {
+        audio.play();
+        }
+        }
+        function submitForm() {
+            
+            
+            window.location.href = window.location.href;
+
+            
+            return false;
         }
     </script>
 </body>

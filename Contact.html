@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('./pictures/repeat-image-reviews.jpg'); /* Replace with the actual path to your image */
+    background-repeat: repeat; /* or 'repeat-x' for horizontal repeat, 'repeat-y' for vertical repeat */
+    background-size: 30%; /* Adjust as needed, 'cover' will make sure the image covers the entire body */
+    background-origin: content-box; /* Specify the background positioning area *//
+}
+#scrollToTop {
+            font-size: 15px;
+            background: linear-gradient(to right, #ffd700, #ffa500); /* Transparent background */
+            color: white !important;
+            position: fixed;
+            border: none;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor:default;
+        }    
+
+        #scrollToTop:hover {
+            transform: scale(1.05);
+            text-decoration: none !important;
+        }
     </style>
     <link rel="stylesheet" href="./external.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -56,6 +83,81 @@ input[type=submit]:hover {
   background-color: #333;
   color: white;
   transition: background-color 0.3s, color 0.3s;
+   /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea{
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: none; /* Remove the border */
+  border-bottom: 2px solid #ccc; /* Add a bottom border */
+  border-radius: 25px ; /* Remove the rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  outline: none; /* Remove the default outline */
+}
+
+input[type=email]{
+  background-color: black;
+}
+
+/* Add some transition effect to the inputs and textarea */
+input[type=text]:focus, select:focus, textarea:focus {
+  border-color: orange; /* Change the border color to green */
+  transition: border-color 0.3s ease-in-out; /* Add a smooth transition */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: orange;
+  color: white; /* Add white text */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: orange;
+}
+
+/* Add a background color and some padding around the form */
+.container-form {
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 600px; /* Limit the width of the form */
+  margin: 0 auto; /* Center the form */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) /* Add a subtle shadow */
+}
+
+/* Add some style to the form title */
+.stili {
+  text-align: center; /* Align the text to the center */
+  font-family: 'Roboto', sans-serif; /* Use a custom font */
+  font-weight: 300; /* Use a lighter font weight */
+  color: #333; /* Use a dark gray color */
+  margin-bottom: 20px; /* Add some bottom margin */
+}
+.submiti{
+    text-align: right;
+}
+/* CSS */
+/* Style the input element */
+#phone-input {
+  max-width: 600px;
+  height: 40px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the output element */
+#phone-output {
+  width: 300px;
+  height: 40px;
+  color: white;
+  border-radius: 5px;
+  line-height: 40px;
 }
 
       </style>
@@ -65,7 +167,7 @@ input[type=submit]:hover {
             <div class="row justify-content-center align-items-center vh-100">            
                 <nav class="navbar navbar-expand-lg align-items-center ml-5" style="width: 90%;"> 
                     <div class="container">                    
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="./Home.html">
                             <img src="./pictures/image.jpg" alt="Home" class="logo" width="200">
                         </a>                    
                         <div class="collapse navbar-collapse" id="navbarNav">
@@ -99,32 +201,65 @@ input[type=submit]:hover {
     <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()"><span>Scroll To Top</span></a>
 
     <main>
-        <div class="container">
-            <form action="action_page.php">
-          
-              <label for="fname">First Name</label>
-              <input type="text" id="fname" name="firstname" placeholder="Your name..">
-          
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-          
-              <label for="country">Country</label>
-              <select id="country" name="country">
-                <option value="australia">Australia</option>
-                <option value="canada">Canada</option>
-                <option value="usa">USA</option>
-              </select>
-          
-              <label for="subject">Subject</label>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-          
-              <input type="submit" value="Submit">
-          
-            </form>
-          </div>
-<br><br><br><br><br>
-    </main>
     
+        <div class="container-form mt-5" style="background-color: whitesmoke; border-radius: 10pxs; text-align: center;">
+          <form id="login" action="action_page.php" onsubmit="return submitForm()">
+            <h1 class="stili">Contact Us</h1>
+
+            <div id="register">
+              <p>Do you want to register?</p>
+              <input type="radio" id="yes" name="register" value="yes">
+              <label for="yes">Yes</label>
+              <input type="radio" id="no" name="register" value="no">
+              <label for="no">No</label>
+            </div>
+
+            <div id="name-fields" style="display: flex;">
+              <input class="m-1" type="text" id="fname" name="firstname" placeholder="First Name" required>
+              <input class="m-1" type="text" id="lname" name="lastname" placeholder="Last Name" required>
+            </div>
+            <input class="m-1" style="background-color: whitesmoke; border-radius: 25px;"type="email" id="email" name="email" placeholder="Email" required>
+            <input style="background-color: whitesmoke; border-radius: 25px;" type="tel" id="phone-input" maxlength="15" placeholder="Phone Number" required>
+            <div id="phone-output"></div>
+
+            <br>
+            <label for="carsInput">Why do you want to contact us...:</label>
+            <input type="text" id="carsInput" name="carsInput" list="cars" placeholder="Select your reason of contact..."><br>
+            <datalist id="cars">
+              <option value="Interest about a car"></option>
+              <option value="Concerns about our customer services"></option>
+              <option value="Feedback"></option>
+              <option value="An issue with our website"></option>
+              <option value="Other"></option>
+            </datalist>
+            <br>
+            <label for="comment">Comment</label>
+            <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px" required></textarea>
+            
+            
+            <label for="key"></label>
+            
+            
+            <!--<keygen id="key" name="key" challenge="123456">-->
+                        
+            
+            <output id="result" for="key"></output>
+          
+          <div class="submiti">
+              <input type="submit" id="submit" value="Submit">
+            </div></form>
+        </div>
+
+        <div class="container1 container1-test_drive mt-5 container-form" >
+          <div class="text-center">
+              <div class="card-body">
+                  <p class="card-text">You can leave an honest review below!</p>
+                  <button class="btn buton-portokalli-grad-linear" onclick="redirekto()">Review Us</button>
+              </div>
+          </div>
+        </div>
+        <br><br><br><br>
+      </main>
     <footer class="background-black">
         <br><br>
         <div class="container-fluid">
@@ -174,5 +309,76 @@ input[type=submit]:hover {
         </div>    
     </footer>
 
+    <script>
+      // Fshi fragmentin "Do you want to register?"
+var registerDiv = document.getElementById("register");
+registerDiv.style.display = "none"; // Fshij div-in që përmban fragmentin e "Do you want to register?"
+
+// Fshi logjikën për t'iu përgjigjur klikimit të radio buttons për regjistrim apo jo
+
+// Shto logjikën për validimin e fushave të emrit dhe mbiemrit
+var fnameField = document.getElementById("fname");
+var lnameField = document.getElementById("lname");
+
+// Add event listener to the submit button
+submitButton.addEventListener("click", function(event) {
+  // ... Logjika e validimit të tjera për email, password, comment që është e njëjtë siç është në kodin aktual ...
+
+  // Validimi për fushat e emrit dhe mbiemrit
+  var fnameValid = fnameField.value.trim() !== "";
+  var lnameValid = lnameField.value.trim() !== "";
+
+  // Trego mesazhe alert nëse validimi dështon
+  if (!fnameValid) {
+    alert("Ju lutem shkruani emrin.");
+  } else if (!lnameValid) {
+    alert("Ju lutem shkruani mbiemrin.");
+  } else if (!emailValid) {
+    // ... Logjika për validimin e email, password, comment të tjera ...
+  } else {
+    // ... Logjika për dërgimin e formës nëse të gjitha validimet kalohen ...
+  }
+});
+// Fshi fragmentin "Do you want to register?"
+var registerDiv = document.getElementById("register");
+registerDiv.style.display = "none"; // Fshij div-in që përmban fragmentin e "Do you want to register?"
+
+// Largo logjikën për t'iu përgjigjur klikimit të radio buttons për regjistrim apo jo
+
+// Shto logjikën për validimin e fushave të emrit dhe mbiemrit
+var fnameField = document.getElementById("fname");
+var lnameField = document.getElementById("lname");
+
+// Add event listener to the submit button
+submitButton.addEventListener("click", function(event) {
+  // ... Logjika për validimin e email, password, comment, të tjera që është e njëjtë si në kodin aktual ...
+
+  // Validimi për fushat e emrit dhe mbiemrit
+  var fnameValid = fnameField.value.trim() !== "";
+  var lnameValid = lnameField.value.trim() !== "";
+
+  // Trego mesazhet alert nëse validimi dështon
+  if (!fnameValid) {
+    alert("Ju lutem shkruani emrin.");
+  } else if (!lnameValid) {
+    alert("Ju lutem shkruani mbiemrin.");
+  } else if (!emailValid) {
+    // ... Logjika për validimin e email, password, comment të tjera ...
+  } else {
+    // ... Logjika për dërgimin e formës nëse të gjitha validimet kalohen ...
+  }
+});
+
+function redirekto() {
+        window.location.href = './Review.html';
+    }
+    function submitForm() {
+            
+            window.location.href = window.location.href;
+
+            
+            return false;
+        }
+</script>
 </body>
 </html>
