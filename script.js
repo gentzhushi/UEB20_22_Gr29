@@ -132,7 +132,6 @@ function submitReview() {
     const review2 = new Review('Euron Osmani', 4, 'Nice experience overall. Would recommend.', '1/3/2024, 3:16:39 PM');
     const review3 = new Review('Gent Zhushi', 3, 'Average service. Could be better.', '1/4/2024, 11:05:22 PM');
 
-    // Adding the instances to the reviews array
     reviews.push(review1, review2, review3);
 }
 displayReviews();
