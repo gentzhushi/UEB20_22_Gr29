@@ -78,6 +78,14 @@ $(document).ready(function () {
     });
 });
 
+function validateDealerName(dealerName) {
+    return dealerName.length >= 2;
+}
+
+function validateRating(rating) {
+    return !isNaN(rating) && parseInt(rating) >= 1 && parseInt(rating) <= 5;
+}
+
 function submitReview() {
     const dealerName = document.getElementById('dealer-name').value;
     const ratingElements = document.getElementsByName('rating');
@@ -93,8 +101,8 @@ function submitReview() {
     const userReview = document.getElementById('review').value;
 
     // Validate inputs
-    if (!dealerName || !selectedRating) {
-        alert('Please fill in all fields, including selecting a rating.');
+    if (!validateDealerName(dealerName) || !validateRating(selectedRating) || !validateUserReview(userReview)) {
+        alert('Please fill in all fields correctly.');
         return;
     }
 
@@ -117,6 +125,5 @@ function submitReview() {
         document.getElementById('review').value = '';
     }, 1000); // 1000 milliseconds = 1 second
 }
-
 displayReviews();
 displayCalculations();
