@@ -400,19 +400,16 @@
     <script>
         function calculateLeasing() {
     try {
-        // Get input values
         const carPrice = parseFloat(document.getElementById("carPrice").value);
         const months = parseInt(document.getElementById("months").value);
 
-        // Check if any input is negative, and throw an error if true
+        // Shiqo nese ka vlera negative, nese po THROW error
         if (isNaN(carPrice) || isNaN(months) || carPrice <= 0 || months <= 0) {
             throw new Error("Please enter a positive sum of money!");
         }
 
-        // Calculate downpayment (20% of the car price)
         const downpayment = 0.2 * carPrice;
 
-        // Calculate monthly payment (rest of the price evenly distributed among the months)
         const monthlyPayment = (carPrice - downpayment) / months;
 
         // Display the result
@@ -423,7 +420,7 @@
             <p>Monthly Payment: $${monthlyPayment.toFixed(2)}</p>
         `;
     } catch (error) {
-        // Handle the error and display a message
+        // Trego Errorin dhe mesazhin permes throwit
         alert("Error: " + error.message);
     }
 }
