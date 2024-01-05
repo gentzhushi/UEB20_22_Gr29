@@ -159,7 +159,7 @@ input[type=submit]:hover {
 
     <main>
         <div class="container-form mt-5" style="background-color: whitesmoke; border-radius: 10pxs; text-align: center;">
-          <form id="login" action="action_page.php">
+          <form id="login" action="action_page.php" onsubmit="return submitForm()">
             <h1 class="stili">Contact Us</h1>
 
             <div id="register">
@@ -179,13 +179,8 @@ input[type=submit]:hover {
             <div id="phone-output"></div>
 
             <br>
-<<<<<<< Updated upstream
             <label for="carsInput">Why do you want to contact us...:</label>
             <input type="text" id="carsInput" name="carsInput" list="cars" placeholder="Select your reason of contact..."><br>
-=======
-            <label for="carsInput">Reason of contact:</label>
-            <input type="text" id="carsInput" name="carsInput" list="cars" placeholder="Please select your reason to contact us..."><br>
->>>>>>> Stashed changes
             <datalist id="cars">
               <option value="Interest about a car"></option>
               <option value="Concerns about our customer services"></option>
@@ -332,7 +327,13 @@ submitButton.addEventListener("click", function(event) {
 function redirekto() {
         window.location.href = './Review.html';
     }
+    function submitForm() {
+            
+            window.location.href = window.location.href;
 
+            
+            return false;
+        }
 </script>
 </body>
 </html>
