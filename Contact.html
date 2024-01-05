@@ -3,140 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        #scrollToTop {
-            font-size: 15px;
-            background: linear-gradient(to right, #ffd700, #ffa500);;
-            color: white !important;
-            position: fixed;
-            border: none;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor:default;
-        }    
-
-        #scrollToTop:hover {
-            transform: scale(1.05);
-            text-decoration: none !important;
-        }
-        .modal {
-            display: none; 
-            position: relative; 
-            padding-top: 100px; 
-            align-items: center;
-            justify-content: center;
-            left: 0;
-            top: 0;
-            padding: 10%;
-            overflow: auto; 
-            background-color: rgb(0,0,0); 
-            background-color: rgba(0,0,0,0.4); 
-        }
-
-
-        .modal-content {
-            position: relative;
-            background-color: #fefefe;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #888;
-            border-radius: 8px;
-            max-width: 600px;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-            -webkit-animation-name: animatetop;
-            -webkit-animation-duration: 0.4s;
-            animation-name: animatetop;
-            animation-duration: 0.4s
-        }
-
-        @-webkit-keyframes animatetop {
-            from {top:-300px; opacity:0} 
-            to {top:0; opacity:1}
-        }
-
-        @keyframes animatetop {
-            from {top:-300px; opacity:0}
-            to {top:0; opacity:1}
-        }
-
-       
-        .close {
-            color: white;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .modal-header {
-            padding: 2px 16px;
-            background-color: rgb(134, 134, 134);
-            color: white;
-        }
-
-        .modal-body {
-            display: flex;
-            flex-direction: column;
-            padding: 5px 16px;
-        }
-
-        .modal-footer {
-            padding: 2px 16px;
-            background-color: rgb(134, 134, 134);
-            color: white;
-        }
-
-        .modal-body input[type=text], .modal-body input[type=number] {
-            width: 90%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            border: none;
-            background: #f1f1f1;
-        }
-
-        .modal-body .btn {
-            background-color: orange;
-            color: white;
-            padding: 16px 20px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
-
-        .modal-body .btn:hover, #myBtn:hover {
-            opacity: 1;
-        }
-
-        #myBtn {
-            background-color: orange;
-            color: white;
-            font-size: 25px;
-            padding: 15px;
-            margin: 60px;
-            border: none;
-            border-radius: 20px;
-        }
-
-        #myBtn:hover {
-            opacity: 0.8;
-            cursor: grab;
-        }
+    
     </style>
     <link rel="stylesheet" href="./external.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <title>Horizon Autos - Contact</title>
 </head>
+<style>
+    /* Style inputs with type="text", select elements and textareas */
+    input[type=text], select, textarea {
+        width: 100%; /* Full width */
+        padding: 12px; /* Some padding */ 
+        border: 1px solid #ccc; /* Gray border */
+        border-radius: 4px; /* Rounded borders */
+        box-sizing: border-box; /* Make sure that padding and width stays in place */
+        margin-top: 6px; /* Add a top margin */
+        margin-bottom: 16px; /* Bottom margin */
+        resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+      }
+      
+      /* Style the submit button with a specific background color etc */
+      input[type=submit] {
+        background-color: #04AA6D;
+        
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      /* When moving the mouse over the submit button, add a darker green color */
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      /* Add a background color and some padding around the form */
+      .container {
+        border-radius: 5px;
+        
+        padding: 20px;
+
+      }
+      /* Make the submit button rotate when clicked */
+input[type=submit]:active {
+  transform: rotate(360deg);
+  transition: transform 0.5s;
+}
+
+/* Make the submit button change color when hovered */
+input[type=submit]:hover {
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+      </style>
 <body>
     <header>
         <div class="container-fluid pb-0" style="background-color: black;"> 
@@ -177,56 +99,32 @@
     <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()"><span>Scroll To Top</span></a>
 
     <main>
-        <button id="myBtn">Contact Us</button>
-
-
-        <div id="myModal" class="modal">
-
-        
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
-                        <h2>Contact Us</h2>
-                            </div>
-                            <div class="modal-body">
-                            <label for="name"><b>Full Name</b></label>
-                            <input type="text" placeholder="Enter Full Name" name="name" required>
-                            
-                            <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter Email" name="email" required>
-                            
-                            <label for="phone"><b>Phone Number</b></label>
-                            <input type="number" placeholder="Enter Phone Number" name="phone" required>
-
-                            <button type="submit" class="btn">Submit</button>
-                            </div>
-                            <div class="modal-footer">
-                                <h3>Copyright @ O.S</h3>
-                            </div>
-                 </div>
-
-            </div>
-
+        <div class="container">
+            <form action="action_page.php">
+          
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+              </select>
+          
+              <label for="subject">Subject</label>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          
+              <input type="submit" value="Submit">
+          
+            </form>
+          </div>
+<br><br><br><br><br>
     </main>
-    <script>
-       
-        var modal = document.getElementById("myModal");
-        var btn = document.getElementById("myBtn");
-        var span = document.getElementsByClassName("close")[0];
-        btn.onclick = function() {
-          modal.style.display = "block";
-        }
-        
-        span.onclick = function() {
-          modal.style.display = "none";
-        }
-        
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        }
-        </script>
+    
     <footer class="background-black">
         <br><br>
         <div class="container-fluid">
@@ -275,5 +173,6 @@
             </div>
         </div>    
     </footer>
+
 </body>
 </html>
