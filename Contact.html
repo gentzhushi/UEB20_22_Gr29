@@ -4,139 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        #scrollToTop {
-            font-size: 15px;
-            background: linear-gradient(to right, #ffd700, #ffa500);;
-            color: white !important;
-            position: fixed;
-            border: none;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor:default;
-        }    
-
-        #scrollToTop:hover {
-            transform: scale(1.05);
-            text-decoration: none !important;
-        }
-        .modal {
-            display: none; 
-            position: relative; 
-            padding-top: 100px; 
-            align-items: center;
-            justify-content: center;
-            left: 0;
-            top: 0;
-            padding: 10%;
-            overflow: auto; 
-            background-color: rgb(0,0,0); 
-            background-color: rgba(0,0,0,0.4); 
-        }
-
-
-        .modal-content {
-            position: relative;
-            background-color: #fefefe;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #888;
-            border-radius: 8px;
-            max-width: 600px;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-            -webkit-animation-name: animatetop;
-            -webkit-animation-duration: 0.4s;
-            animation-name: animatetop;
-            animation-duration: 0.4s
-        }
-
-        @-webkit-keyframes animatetop {
-            from {top:-300px; opacity:0} 
-            to {top:0; opacity:1}
-        }
-
-        @keyframes animatetop {
-            from {top:-300px; opacity:0}
-            to {top:0; opacity:1}
-        }
-
        
-        .close {
-            color: white;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .modal-header {
-            padding: 2px 16px;
-            background-color: rgb(134, 134, 134);
-            color: white;
-        }
-
-        .modal-body {
-            display: flex;
-            flex-direction: column;
-            padding: 5px 16px;
-        }
-
-        .modal-footer {
-            padding: 2px 16px;
-            background-color: rgb(134, 134, 134);
-            color: white;
-        }
-
-        .modal-body input[type=text], .modal-body input[type=number] {
-            width: 90%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            border: none;
-            background: #f1f1f1;
-        }
-
-        .modal-body .btn {
-            background-color: orange;
-            color: white;
-            padding: 16px 20px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
-
-        .modal-body .btn:hover, #myBtn:hover {
-            opacity: 1;
-        }
-
-        #myBtn {
-            background-color: orange;
-            color: white;
-            font-size: 25px;
-            padding: 15px;
-            margin: 60px;
-            border: none;
-            border-radius: 20px;
-        }
-
-        #myBtn:hover {
-            opacity: 0.8;
-            cursor: grab;
-        }
     </style>
     <link rel="stylesheet" href="./external.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <title>Horizon Autos - Contact</title>
 </head>
+<style>
+   /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: none; /* Remove the border */
+  border-bottom: 2px solid #ccc; /* Add a bottom border */
+  border-radius: 0; /* Remove the rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  outline: none; /* Remove the default outline */
+}
+
+/* Add some transition effect to the inputs and textarea */
+input[type=text]:focus, select:focus, textarea:focus {
+  border-color: #04AA6D; /* Change the border color to green */
+  transition: border-color 0.3s ease-in-out; /* Add a smooth transition */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white; /* Add white text */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 600px; /* Limit the width of the form */
+  margin: 0 auto; /* Center the form */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Add some style to the form title */
+h1 {
+  text-align: center; /* Align the text to the center */
+  font-family: 'Roboto', sans-serif; /* Use a custom font */
+  font-weight: 300; /* Use a lighter font weight */
+  color: #333; /* Use a dark gray color */
+  margin-bottom: 20px; /* Add some bottom margin */
+}
+.submiti{
+    text-align: right;
+}
+/* CSS */
+/* Style the input element */
+#phone-input {
+  width: 300px;
+  height: 40px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the output element */
+#phone-output {
+  width: 300px;
+  height: 40px;
+  color: white;
+  border-radius: 5px;
+  line-height: 40px;
+}
+
+      </style>
 <body>
     <header>
         <div class="container-fluid pb-0" style="background-color: black;"> 
@@ -177,56 +126,55 @@
     <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()"><span>Scroll To Top</span></a>
 
     <main>
-        <button id="myBtn">Contact Us</button>
-
-
-        <div id="myModal" class="modal">
-
-        
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
-                        <h2>Contact Us</h2>
-                            </div>
-                            <div class="modal-body">
-                            <label for="name"><b>Full Name</b></label>
-                            <input type="text" placeholder="Enter Full Name" name="name" required>
-                            
-                            <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter Email" name="email" required>
-                            
-                            <label for="phone"><b>Phone Number</b></label>
-                            <input type="number" placeholder="Enter Phone Number" name="phone" required>
-
-                            <button type="submit" class="btn">Submit</button>
-                            </div>
-                            <div class="modal-footer">
-                                <h3>Copyright @ O.S</h3>
-                            </div>
-                 </div>
-
+        <div class="container">
+          <form id="login" action="action_page.php">
+            <h1>Contact Us</h1>
+            <div id="register">
+              <p>Do you want to register?</p>
+              <input type="radio" id="yes" name="register" value="yes">
+              <label for="yes">Yes</label>
+              <input type="radio" id="no" name="register" value="no">
+              <label for="no">No</label>
             </div>
+            <div id="name-fields">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+        
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+            </div>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="Your email.." required><br>
+      
+            <!-- HTML --><label for="fname">Phone number</label><br>
+            <input type="tel" id="phone-input" placeholder="+383 44 123 456"  maxlength="15" required>
+            <div id="phone-output"></div>
 
-    </main>
-    <script>
-       
-        var modal = document.getElementById("myModal");
-        var btn = document.getElementById("myBtn");
-        var span = document.getElementsByClassName("close")[0];
-        btn.onclick = function() {
-          modal.style.display = "block";
-        }
-        
-        span.onclick = function() {
-          modal.style.display = "none";
-        }
-        
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        }
-        </script>
+            <br>
+            <label for="carsInput">Why do you want to contact us...:</label>
+            <input type="text" id="carsInput" name="carsInput" list="cars" placeholder="Please select your reason to contact us..."><br>
+            <datalist id="cars">
+              <option value="You are interested about a car..."></option>
+              <option value="You are interested in the staff..."></option>
+              <option value="Feedback"></option>
+              <option value="Report a BUG..."></option>
+              <option value="other"></option>
+            </datalist>
+            <br>
+            <label for="comment">Comment</label>
+            <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px" required></textarea>
+            
+            
+            <label for="key"></label>
+            <keygen id="key" name="key" challenge="123456">
+            <output id="result" for="key"></output>
+          
+          <div class="submiti">
+              <input type="submit" id="submit" value="Submit">
+            </div></form>
+        </div>
+        <br><br><br><br>
+      </main>
     <footer class="background-black">
         <br><br>
         <div class="container-fluid">
@@ -275,5 +223,67 @@
             </div>
         </div>    
     </footer>
+    <script>
+      // Fshi fragmentin "Do you want to register?"
+var registerDiv = document.getElementById("register");
+registerDiv.style.display = "none"; // Fshij div-in që përmban fragmentin e "Do you want to register?"
+
+// Fshi logjikën për t'iu përgjigjur klikimit të radio buttons për regjistrim apo jo
+
+// Shto logjikën për validimin e fushave të emrit dhe mbiemrit
+var fnameField = document.getElementById("fname");
+var lnameField = document.getElementById("lname");
+
+// Add event listener to the submit button
+submitButton.addEventListener("click", function(event) {
+  // ... Logjika e validimit të tjera për email, password, comment që është e njëjtë siç është në kodin aktual ...
+
+  // Validimi për fushat e emrit dhe mbiemrit
+  var fnameValid = fnameField.value.trim() !== "";
+  var lnameValid = lnameField.value.trim() !== "";
+
+  // Trego mesazhe alert nëse validimi dështon
+  if (!fnameValid) {
+    alert("Ju lutem shkruani emrin.");
+  } else if (!lnameValid) {
+    alert("Ju lutem shkruani mbiemrin.");
+  } else if (!emailValid) {
+    // ... Logjika për validimin e email, password, comment të tjera ...
+  } else {
+    // ... Logjika për dërgimin e formës nëse të gjitha validimet kalohen ...
+  }
+});
+// Fshi fragmentin "Do you want to register?"
+var registerDiv = document.getElementById("register");
+registerDiv.style.display = "none"; // Fshij div-in që përmban fragmentin e "Do you want to register?"
+
+// Largo logjikën për t'iu përgjigjur klikimit të radio buttons për regjistrim apo jo
+
+// Shto logjikën për validimin e fushave të emrit dhe mbiemrit
+var fnameField = document.getElementById("fname");
+var lnameField = document.getElementById("lname");
+
+// Add event listener to the submit button
+submitButton.addEventListener("click", function(event) {
+  // ... Logjika për validimin e email, password, comment, të tjera që është e njëjtë si në kodin aktual ...
+
+  // Validimi për fushat e emrit dhe mbiemrit
+  var fnameValid = fnameField.value.trim() !== "";
+  var lnameValid = lnameField.value.trim() !== "";
+
+  // Trego mesazhet alert nëse validimi dështon
+  if (!fnameValid) {
+    alert("Ju lutem shkruani emrin.");
+  } else if (!lnameValid) {
+    alert("Ju lutem shkruani mbiemrin.");
+  } else if (!emailValid) {
+    // ... Logjika për validimin e email, password, comment të tjera ...
+  } else {
+    // ... Logjika për dërgimin e formës nëse të gjitha validimet kalohen ...
+  }
+});
+
+
+        </script>
 </body>
 </html>
