@@ -39,20 +39,16 @@
 <style>
    /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea{
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */ 
-  border: none; /* Remove the border */
-  border-bottom: 2px solid #ccc; /* Add a bottom border */
-  border-radius: 25px ; /* Remove the rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-  outline: none; /* Remove the default outline */
-}
-
-input[type=email]{
-  background-color: black;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  border-radius: 25px ;          
+  box-sizing: border-box;        
+  margin-top: 6px;               
+  margin-bottom: 16px;           
+  resize: vertical;              
+  outline: none;                 
 }
 
 /* Add some transition effect to the inputs and textarea */
@@ -171,12 +167,12 @@ input[type=submit]:hover {
               <input class="m-1" type="text" id="fname" name="firstname" placeholder="First Name" required>
               <input class="m-1" type="text" id="lname" name="lastname" placeholder="Last Name" required>
             </div>
-            <input class="m-1" style="background-color: whitesmoke; border-radius: 25px;"type="email" id="email" name="email" placeholder="Email" required>
-            <input style="background-color: whitesmoke; border-radius: 25px;" type="tel" id="phone-input" maxlength="15" placeholder="Phone Number" required>
+            <input class="m-1" style="border-radius: 25px; background-color: white; border: none; border-bottom: 2px solid #ccc;" type="email" id="email" name="email" placeholder="Email" required>
+            <input style="border-radius: 25px; background-color: white; border: none; border-bottom: 2px solid #ccc;" type="tel" id="phone-input" maxlength="15" placeholder="Phone Number" required>
             <div id="phone-output"></div>
 
             <br>
-            <label for="carsInput">Why do you want to contact us...:</label>
+            <label for="carsInput">Reason of contact:</label>
             <input type="text" id="carsInput" name="carsInput" list="cars" placeholder="Select your reason of contact..."><br>
             <datalist id="cars">
               <option value="Interest about a car"></option>
