@@ -180,7 +180,7 @@
         <div class="row mt-5">
             <div class="col-md-6 offset-md-3">
                 <h3 class="text-center mb-4">Have more questions?</h3>
-                <form id="questionsForm">
+                <form id="questionsForm" onsubmit="return submitForm()">
                     <div class="form-group">
                         <label for="inputEmail">Your Email:</label>
                         <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
@@ -303,6 +303,13 @@
         if (audio.canPlayType && audio.canPlayType('audio/mpeg')) {
         audio.play();
         }
+        }
+        function submitForm() {
+            
+            window.location.href = window.location.href;
+
+            
+            return false;
         }
     </script>
 </body>
