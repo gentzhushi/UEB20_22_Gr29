@@ -191,7 +191,7 @@
         <p>Fill out the form below to schedule a test drive.</p>
 
         <div class="container1-test_drive">
-            <form class="form-test_drive" action="#" method="post">
+            <form class="form-test_drive" action="#" method="post" onsubmit="return submitForm()">
                 <label class="form-label-test_drive" for="name">Your username:</label>
                 <input class="form-input-test_drive" type="text" id="username" name="username" required>
 
@@ -207,7 +207,7 @@
                 </div>
                 
                 <input class="form-input-test_drive col-md-5 mx-auto d-flex justify-content-center" type="submit" value="Schedule Test Drive">
-            </form>
+            </form> 
         </div>
 
     </div>
@@ -238,7 +238,7 @@
     <div class="container1 container1-test_drive mb-5">
         <h2>Subscribe to Our Newsletter</h2>
         <p>Stay updated with the latest news and offers.</p>
-        <form action="#" method="post" onsubmit="return showConfirmation()">
+        <form action="#" method="post" onsubmit="return submitForm()">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             <input class="form-input-test_drive col-md-5 mx-auto d-flex justify-content-center " type="submit" value="Subscribe">
@@ -312,6 +312,7 @@
         }
     </script>
      <script>
+        
         function showConfirmation() {
             
             var confirmSubscribe = confirm("You will be informed with every email we send to our customers, sure you want to continue?");
@@ -392,7 +393,13 @@ document.addEventListener("drop", function(event) {
             }
         });
     });
+    function submitForm() {
             
+            window.location.href = window.location.href;
+
+            
+            return false;
+        }
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
