@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-       
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('./pictures/repeat-image-reviews.jpg'); /* Replace with the actual path to your image */
+    background-repeat: repeat; /* or 'repeat-x' for horizontal repeat, 'repeat-y' for vertical repeat */
+    background-size: 30%; /* Adjust as needed, 'cover' will make sure the image covers the entire body */
+    background-origin: content-box; /* Specify the background positioning area *//
+}
     </style>
     <link rel="stylesheet" href="./external.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -18,7 +26,7 @@ input[type=text], select, textarea {
   padding: 12px; /* Some padding */ 
   border: none; /* Remove the border */
   border-bottom: 2px solid #ccc; /* Add a bottom border */
-  border-radius: 0; /* Remove the rounded borders */
+  border-radius: 25px ; /* Remove the rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
@@ -38,7 +46,7 @@ input[type=submit] {
   color: white; /* Add white text */
   padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 25px;
   cursor: pointer;
 }
 
@@ -126,7 +134,7 @@ input[type=submit]:hover {
     <a id="scrollToTop" href="#" onclick="scrollToTopAndPlayAudio()"><span>Scroll To Top</span></a>
 
     <main>
-        <div class="container-form">
+        <div class="container-form" style="background-color: whitesmoke;">
           <form id="login" action="action_page.php">
             <h1 class="stili">Contact Us</h1>
             <div id="register">
