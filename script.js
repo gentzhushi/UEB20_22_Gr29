@@ -87,7 +87,7 @@ function validateRating(rating) {
 }
 
 function validateUserReview(userReview) {
-    return userReview.length > 0;
+    return userReview.length >= 0;
 }
 
 function submitReview() {
