@@ -38,63 +38,22 @@
     <title>Horizon Autos - Contact</title>
 </head>
 <style>
-    /* Style inputs with type="text", select elements and textareas */
-    input[type=text], select, textarea {
-        width: 100%; /* Full width */
-        padding: 12px; /* Some padding */ 
-        border: 1px solid #ccc; /* Gray border */
-        border-radius: 4px; /* Rounded borders */
-        box-sizing: border-box; /* Make sure that padding and width stays in place */
-        margin-top: 6px; /* Add a top margin */
-        margin-bottom: 16px; /* Bottom margin */
-        resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-      }
-      
-      /* Style the submit button with a specific background color etc */
-      input[type=submit] {
-        background-color: #04AA6D;
-        
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      
-      /* When moving the mouse over the submit button, add a darker green color */
-      input[type=submit]:hover {
-        background-color: #45a049;
-      }
-      
-      /* Add a background color and some padding around the form */
-      .container {
-        border-radius: 5px;
-        
-        padding: 20px;
-
-      }
-      /* Make the submit button rotate when clicked */
-input[type=submit]:active {
-  transform: rotate(360deg);
-  transition: transform 0.5s;
-}
-
-/* Make the submit button change color when hovered */
-input[type=submit]:hover {
-  background-color: #333;
-  color: white;
-  transition: background-color 0.3s, color 0.3s;
    /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea{
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  border-radius: 25px ;          
-  box-sizing: border-box;        
-  margin-top: 6px;               
-  margin-bottom: 16px;           
-  resize: vertical;              
-  outline: none;                 
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: none; /* Remove the border */
+  border-bottom: 2px solid #ccc; /* Add a bottom border */
+  border-radius: 25px ; /* Remove the rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  outline: none; /* Remove the default outline */
+}
+
+input[type=email]{
+  background-color: black;
 }
 
 /* Add some transition effect to the inputs and textarea */
@@ -109,7 +68,7 @@ input[type=submit] {
   color: white; /* Add white text */
   padding: 12px 20px;
   border: none;
-  border-radius: 25px;
+  border-radius: 25px; 
   cursor: pointer;
 }
 
@@ -214,12 +173,12 @@ input[type=submit]:hover {
               <input class="m-1" type="text" id="fname" name="firstname" placeholder="First Name" required>
               <input class="m-1" type="text" id="lname" name="lastname" placeholder="Last Name" required>
             </div>
-            <input class="m-1" style="border-radius: 25px; background-color: white; border: none; border-bottom: 2px solid #ccc;" type="email" id="email" name="email" placeholder="Email" required>
-            <input style="border-radius: 25px; background-color: white; border: none; border-bottom: 2px solid #ccc;" type="tel" id="phone-input" maxlength="15" placeholder="Phone Number" required>
+            <input class="m-1" style="background-color: whitesmoke; border-radius: 25px; ;"type="email" id="email" name="email" placeholder="Email" required>
+            <input  style="background-color: whitesmoke; border-radius: 25px; padding: 12px; " type="tel" id="phone-input" maxlength="15" placeholder="Phone Number" required>
             <div id="phone-output"></div>
 
             <br>
-            <label for="carsInput">Reason of contact:</label>
+            <label for="carsInput">Why do you want to contact us...:</label>
             <input type="text" id="carsInput" name="carsInput" list="cars" placeholder="Select your reason of contact..."><br>
             <datalist id="cars">
               <option value="Interest about a car"></option>
