@@ -41,7 +41,59 @@
             margin-bottom: 5px;
         }
 
-        
+        #carForm {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            padding: 20px;
+        }
+        #carForm input[type=text], #carForm input[type=number] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+        }
+        #carForm input[type=text]:focus, #carForm input[type=number]:focus {
+            border: 3px solid #555;
+        }
+        #carTable {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        #carTable th, #carTable td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        #carTable th {
+            background-color: orange;
+            color: white;
+        }
+        #carForm input[type=submit] {
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+}
+
+        #carForm input[type=submit]:hover {
+         background-color: white; 
+        color: rgb(255, 255, 255);
+        transform: scale(1.05);
+}
+
     </style>
     
 </head>
@@ -349,7 +401,23 @@
                 <br>          
                 <button type="button" onclick="calculateLeasing()" class="leasing-form-button buton-portokalli-grad-linear d-flex mx-auto">Calculate</button>          
                 <div id="result" class="leasing-form-result"></div>
+            </form><br>
+            <legend class="leasing-form-legend mx-auto d-flex">Tax Calculator</legend>
+            <form id="carForm">
+                <label for="carName">Car Name:</label><br>
+                <input type="text" id="carName" name="carName"><br>
+                <label for="carPrice">Car Price:</label><br>
+                <input type="number" id="carPrice" name="carPrice"><br>
+               <input type="submit" value="Calculate">
             </form>
+        
+            <table id="carTable">
+                <tr>
+                    <th>Car Name</th>
+                    <th>Price</th>
+                    <th>Tax in exponential form</th>
+                </tr>
+            </table>
         </div>
     </main>
 
@@ -456,6 +524,35 @@
           }
         });
       });
+
+      document.getElementById('carForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var carName = document.getElementById('carName').value;
+            var carPrice = parseFloat(document.getElementById('carPrice').value);
+            var formattedCarPrice = carPrice.toString() + " €";
+            var tax = carPrice * 0.2;
+
+            if (tax > Number.MAX_VALUE) {
+                console.log("Taksa është më e madhe se MAX_VALUE");
+            }
+
+            var formattedTax = tax.toExponential(2);
+
+            if (isNaN(formattedTax)) {
+                console.log("Taksa e formatuar është NaN");
+            } else {
+                var table = document.getElementById('carTable');
+                var row = table.insertRow(-1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+
+                cell1.innerHTML = carName;
+                cell2.innerHTML = formattedCarPrice;
+                cell3.innerHTML = formattedTax.toString();
+            }
+        });
     </script>
      <script src="./search.js"></script>
     <!-- drangNdrop end-->

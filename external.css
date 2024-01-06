@@ -304,7 +304,6 @@ thead {
 td {
     background-color: whitesmoke; 
 }
-<<<<<<< Updated upstream
 /* scroll bari*/
 body {
     background-color: transparent;
@@ -407,7 +406,6 @@ body {
 }
 
 
-=======
 .car-info {
     display: none; /* Fshehja e elementit në fillim */
     position: absolute;
@@ -417,4 +415,3 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid #ccc;
 }
->>>>>>> Stashed changes
