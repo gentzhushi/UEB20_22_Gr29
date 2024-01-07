@@ -19,9 +19,9 @@ div main{
     font-weight: normal;
     font-style: normal;
 }
-/*.font-veqant {
-    font-family: 'Ubuntu', sans-serif !important;
-}*/
+.font-veqant {
+    font-family: 'Ubotu', sans-serif !important;
+}
 .background-black{
     background-color: black;
     color:whitesmoke;
